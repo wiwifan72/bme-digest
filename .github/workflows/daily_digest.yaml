@@ -1,0 +1,48 @@
+name: Daily BME Digest
+
+on:
+  schedule:
+    # Runs every day at 6:00 AM UTC (2am EST / 1am CST)
+    # Adjust the hour to your preference: https://crontab.guru
+    - cron: '0 6 * * *'
+
+  # Also allows you to trigger manually from the GitHub Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed to push the generated HTML to gh-pages
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # 1. Check out the repo
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # 4. Run the scraper → generates docs/index.html and docs/data.json
+      - name: Run scraper
+        run: python scripts/scraper.py
+
+      # 5. Deploy docs/ folder to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          commit_message: "digest: ${{ github.run_id }} — auto-generated"
+          force_orphan: true   # keeps gh-pages branch clean (no history bloat)

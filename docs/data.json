@@ -1,0 +1,546 @@
+{
+  "generated": "2026-03-23",
+  "total": 35,
+  "articles": [
+    {
+      "title": "A novel software framework for magnetic particle imaging reconstruction",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/1ae3367fb0c515081ec736d4f96e23f08634e58b",
+      "summary": "Magnetic particle imaging is a novel tomographic imaging technique that enables noninvasive and highly sensitive imaging of superparamagnetic iron oxide nanoparticles distributed in living subjects. Several studies have reported on the development of reconstruction algorithms; however, a unified software framework for magnetic particle imaging reconstruction has yet to be developed. Herein, we propose a high\u2010performance, flexible, and easy\u2010to\u2010use\u2026",
+      "date": "2022",
+      "relevance_tags": [
+        "magnetic particle imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "YuSong Shen",
+        "Chaoen Hu",
+        "Peng Zhang",
+        "Jie Tian"
+      ],
+      "citations": 25
+    },
+    {
+      "title": "Accurate Concentration Recovery for Quantitative Magnetic Particle Imaging Reconstruction via Nonconvex Regularization",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/5db10ac7d249d675c5382ea7ca90bec53cb13fc2",
+      "summary": "Magnetic particle imaging (MPI) uses nonlinear response signals to noninvasively detect magnetic nanoparticles in space, and its quantitative properties hold promise for future precise quantitative treatments. In reconstruction, the system matrix based method necessitates suitable regularization terms, such as Tikhonov or non-negative fused lasso (NFL) regularization, to stabilize the solution. While NFL regularization offers clearer edge informa\u2026",
+      "date": "2024",
+      "relevance_tags": [
+        "magnetic particle imaging",
+        "MPI reconstruction"
+      ],
+      "category": "paper",
+      "authors": [
+        "Tao Zhu",
+        "Lin Yin",
+        "Jie He",
+        "Zechen Wei"
+      ],
+      "citations": 9
+    },
+    {
+      "title": "MPIGAN: An end-to-end deep based generative framework for high-resolution magnetic particle imaging reconstruction.",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/2d5f853b7bb71c7f7272da7fdce2ac69f056a3b3",
+      "summary": "BACKGROUND Magnetic particle imaging (MPI) is a recently developed, non-invasive in vivo imaging technique to map the spatial distribution of superparamagnetic iron oxide nanoparticles (SPIONs) in animal tissues with high sensitivity and speed. It is a challenge to reconstruct images directly from the received signals of MPI device due to the complex physical behavior of the nanoparticles. System matrix and X-space are two commonly used MPI recon\u2026",
+      "date": "2024",
+      "relevance_tags": [
+        "magnetic particle imaging",
+        "MPI reconstruction"
+      ],
+      "category": "paper",
+      "authors": [
+        "Jing Zhao",
+        "Yusong Shen",
+        "Xinyi Liu",
+        "Xiaoyuan Hou"
+      ],
+      "citations": 7
+    },
+    {
+      "title": "A fused LASSO operator for fast 3D magnetic particle imaging reconstruction",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/3102338032f27d2f0c00a24871979be2e056b13c",
+      "summary": "Objective. Magnetic particle imaging (MPI) is a promising imaging modality that leverages the nonlinear magnetization behavior of superparamagnetic iron oxide nanoparticles to determine their concentration distribution. Previous optimization models with multiple regularization terms have been proposed to achieve high-quality MPI reconstruction, but these models often result in increased computational burden, particularly for dense gridding 3D fie\u2026",
+      "date": "2024",
+      "relevance_tags": [
+        "magnetic particle imaging",
+        "MPI reconstruction"
+      ],
+      "category": "paper",
+      "authors": [
+        "Jie He",
+        "Yimeng Li",
+        "Peng Zhang",
+        "Hui Hui"
+      ],
+      "citations": 3
+    },
+    {
+      "title": "Joint Segmentation and Image Reconstruction with Error Prediction in Photoacoustic Imaging using Deep Learning",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2407.02653v1",
+      "summary": "Deep learning has been used to improve photoacoustic (PA) image reconstruction. One major challenge is that errors cannot be quantified to validate predictions when ground truth is unknown. Validation is key to quantitative applications, especially using limited-bandwidth ultrasonic linear detector arrays. Here, we propose a hybrid Bayesian convolutional neural network (Hybrid-BCNN) to jointly predict PA image and segmentation with error (uncerta\u2026",
+      "date": "2024-07-02",
+      "relevance_tags": [
+        "photoacoustic imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Ruibo Shang",
+        "Geoffrey P. Luke",
+        "Matthew O'Donnell"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Limited-View Photoacoustic Imaging Reconstruction Via High-quality Self-supervised Neural Representation",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2407.03663v1",
+      "summary": "In practical applications within the human body, it is often challenging to fully encompass the target tissue or organ, necessitating the use of limited-view arrays, which can lead to the loss of crucial information. Addressing the reconstruction of photoacoustic sensor signals in limited-view detection spaces has become a focal point of current research. In this study, we introduce a self-supervised network termed HIgh-quality Self-supervised ne\u2026",
+      "date": "2024-07-04",
+      "relevance_tags": [
+        "photoacoustic imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Youshen xiao",
+        "Yuting Shen",
+        "Bowei Yao",
+        "Xiran Cai"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Normalizing flow regularization for photoacoustic tomography",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2409.16564v1",
+      "summary": "Proper regularization is crucial in inverse problems to achieve high-quality reconstruction, even with an ill-conditioned measurement system. This is particularly true for three-dimensional photoacoustic tomography, which is computationally demanding and requires rapid scanning, often leading to incomplete measurements. Deep neural networks, known for their efficiency in handling big data, are anticipated to be adept at extracting underlying info\u2026",
+      "date": "2024-09-25",
+      "relevance_tags": [
+        "photoacoustic tomography"
+      ],
+      "category": "paper",
+      "authors": [
+        "Chao Wang",
+        "Alexandre H. Thiery"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Nanomedicine Revolution: Tiny Tech With Big Impact on Health Care.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41790858/",
+      "summary": "The nanomedicine revolution represents a paradigm shift in modern health care, leveraging nanoscale materials to achieve unprecedented precision, personalization, and performance in diagnosis and therapy. Emerging from Feynman's foundational vision of nanotechnology, nanomedicine integrates nanoengineering, materials science, and biotechnology to enable targeted drug delivery, advanced imaging, and regenerative applications. Nanoparticles (NPs) f\u2026",
+      "date": "2025",
+      "relevance_tags": [
+        "photoacoustic imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Tun",
+        "Goswami",
+        "Goktas",
+        "Canchanya"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Multi\u2010task generative model for high\u2010quality magnetic particle imaging reconstruction",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/96fee5abcd2e8d154b868a1330c923aa7b4faccc",
+      "summary": "",
+      "date": "2025",
+      "relevance_tags": [
+        "magnetic particle imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Jing Zhao",
+        "Haoran Zhang",
+        "Xinyi Liu",
+        "Jie Tian"
+      ],
+      "citations": 2
+    },
+    {
+      "title": "Learning Background Noise for Tabletop Magnetic Particle Imaging Reconstruction",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/8cbdda47e7c91cea25606f355fde2a90591e1254",
+      "summary": "Magnetic particle imaging (MPI) is an emerging tomographic technique that utilizes the nonlinear magnetization response of superparamagnetic iron oxide nanoparticles to provide high-contrast and high-spatial-resolution images. However, image quality can be affected by various noise sources, including harmonic interference, Gaussian noise, and ambient noise, which can reduce the signal-to-noise ratio and introduce artifacts. To address these chall\u2026",
+      "date": "2025",
+      "relevance_tags": [
+        "magnetic particle imaging",
+        "MPI reconstruction"
+      ],
+      "category": "paper",
+      "authors": [
+        "Kangjian Huang",
+        "Maofan Li",
+        "Ming-Hui Cheng",
+        "Congcong Liu"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Super-temporal-resolution Photoacoustic Imaging with Dynamic Reconstruction through Implicit Neural Representation in Sparse-view",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2506.03175v1",
+      "summary": "Dynamic Photoacoustic Computed Tomography (PACT) is an important imaging technique for monitoring physiological processes, capable of providing high-contrast images of optical absorption at much greater depths than traditional optical imaging methods. However, practical instrumentation and geometric constraints limit the number of acoustic sensors available around the imaging target, leading to sparsity in sensor data. Traditional photoacoustic (\u2026",
+      "date": "2025-05-29",
+      "relevance_tags": [
+        "photoacoustic imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Youshen Xiao",
+        "Yiling Shi",
+        "Ruixi Sun",
+        "Hongjiang Wei"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Label tree semantic losses for rich multi-class medical image segmentation",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2507.15777v2",
+      "summary": "Rich and accurate medical image segmentation is poised to underpin the next generation of AI-defined clinical practice by delineating critical anatomy for pre-operative planning, guiding real-time intra-operative navigation, and supporting precise post-operative assessment. However, commonly used learning methods for medical and surgical imaging segmentation tasks penalise all errors equivalently and thus fail to exploit any inter-class semantics\u2026",
+      "date": "2025-07-21",
+      "relevance_tags": [
+        "medical image segmentation"
+      ],
+      "category": "paper",
+      "authors": [
+        "Junwen Wang",
+        "Oscar MacCormac",
+        "William Rochford",
+        "Aaron Kujawa"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Physics-Aware Neural Operators for Direct Inversion in 3D Photoacoustic Tomography",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2509.09894v2",
+      "summary": "Learning physics-constrained inverse operators-rather than post-processing physics-based reconstructions-is a broadly applicable strategy for problems with expensive forward models. We demonstrate this principle in three-dimensional photoacoustic computed tomography (3D PACT), where current systems demand dense transducer arrays and prolonged scans, restricting clinical translation. We introduce PANO (PACT imaging neural operator), an end-to-end \u2026",
+      "date": "2025-09-11",
+      "relevance_tags": [
+        "photoacoustic tomography"
+      ],
+      "category": "paper",
+      "authors": [
+        "Jiayun Wang",
+        "Yousuf Aborahama",
+        "Arya Khokhar",
+        "Yang Zhang"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Compressive Sensing Photoacoustic Imaging Receiver with Matrix-Vector-Multiplication SAR ADC",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2511.06580v1",
+      "summary": "Wearable photoacoustic imaging devices hold great promise for continuous health monitoring and point-of-care diagnostics. However, the large data volume generated by high-density transducer arrays presents a major challenge for realizing compact and power-efficient wearable systems. This paper presents a photoacoustic imaging receiver (RX) that embeds compressive sensing directly into the hardware to address this bottleneck. The RX integrates 16 \u2026",
+      "date": "2025-11-09",
+      "relevance_tags": [
+        "photoacoustic imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Huan-Cheng Liao",
+        "Shunyao Zhang",
+        "Yumin Su",
+        "Arvind Govinday"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Deep Learning-Based Super-Resolution for Vessel Enhancement in Photoacoustic Microscopy Imaging.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41780538/",
+      "summary": "Photoacoustic imaging (PAI) is an advanced imaging technique for high-resolution (HR), non-invasive visualization of vascular networks, offering distinct advantages in functional and structural imaging. However, its performance is often constrained by trade-offs between spatial resolution and imaging depth, as well as noise and artifacts caused by system limitations and tissue properties. Here, we introduce GDSU-Net, a fine-tuned neural network d\u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "photoacoustic imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Vu",
+        "Tak",
+        "Vo",
+        "Nguyen"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "First in-vivo human magnetic particle imaging",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2603.12010v2",
+      "summary": "Magnetic particle imaging (MPI) is a tracer-based technique that directly detects the distribution of magnetic iron-oxide nanoparticles with millisecond temporal resolution and no tissue background. Despite extensive preclinical work, in-vivo application of MPI in humans has not previously been reported. Here, we report the first in-vivo human MPI angiography, visualizing venous perfusion of the upper extremity using a human-scale scanner and cli\u2026",
+      "date": "2026-03-12",
+      "relevance_tags": [
+        "magnetic particle imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Patrick Vogel",
+        "Thomas Kampf",
+        "Martin A. R\u00fcckert",
+        "Johanna G\u00fcnther"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Debye Relaxation in Model-Based Multi-Dimensional Magnetic Particle Imaging",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2603.11708v1",
+      "summary": "Model-based reconstruction approaches for the medical imaging modality Magnetic Particle Imaging (MPI) are typically based on the Langevin model, which assumes instantaneous alignment of the particles magnetic momenta with the applied field. Regarding the application to real data, Langevin model-based reconstruction methods require model transfer functions (MTF) obtained from calibrations to preprocess the data. There are also model-based reconst\u2026",
+      "date": "2026-03-12",
+      "relevance_tags": [
+        "magnetic particle imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Vladyslav Gapyak",
+        "Thomas M\u00e4rz",
+        "Andreas Weinmann"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Extended Out-of-hospital Low-molecular-weight Heparin Prophylaxis Against DVT and PE in Patients Undergoing Major Lung Resection",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT02258958",
+      "summary": "Postoperative venous thromboembolism (VTE) is a significant health-care problem, resulting in significant morbidity, mortality and resource utilization. The true incidence is unknown, and may range from 1% to 15%. At the current time, the clinical practice of VTE prophylaxis in thoracic surgery includes administration of unfractionated or low molecular weight heparin starting at the perioperative period and finishing at the time of patients' disc\u2026",
+      "date": "2014-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Feasibility Analysis of LCD-SLA 3D Printing Technology for Overall Surgical Planning of Liver Malignant Tumors",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06526754",
+      "summary": "This study aims to evaluate the effectiveness of 3D-printed liver models in hepatobiliary surgery planning compared to traditional digital simulations. It is conducted in three phases: 1. Development and validation of 35 3D-printed liver models, focusing on timeliness, cost, precision, and alignment with digital planning tools. 2. Optimization of the 3D reconstruction process using deep learning to enhance model accuracy and efficiency. 3. A retr\u2026",
+      "date": "2019-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "High-definition Videobronchoscopy in Sarcoidosis",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT04743596",
+      "summary": "In the last few years, high-definition (HD) videobronchoscopy has become widely available in the market and will progressively become the standard of care for airway inspection and sampling, as it provides substantially higher resolution images as compared to conventional white light bronchoscopy. Furthermore, in combination with improved video processor units, some HD videobronchoscopes offer post-processing real-time image enhancement (i-scan t\u2026",
+      "date": "2021-03-17",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "CT-based 3D Planning, Computer Navigation and Subsequent Migration Analysis in Total Hip Arthroplasty",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05159206",
+      "summary": "The aim of this study is to evaluate a new technique that optimizes the prosthesis position for patients who undergo total hip arthroplasty surgery. Today, most surgeons take a regular X-ray (2D) to plan the surgery. In this study, patients will do a computed tomography (CT) before surgery, and with the use of the new system, the investigators will be able to make a more accurate plan when it comes to prosthetic placement and leg length adjustmen\u2026",
+      "date": "2021-04-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "The circTeloDIAG: Liquid Biopsy for Glioma Tumor",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT04931732",
+      "summary": "Gliomas represent the most frequent primary brain tumor, with 2,500 to 3,000 new cases per year in France. Their diagnosis, although highly complex, is essential for determining patient management. While grade I gliomas (infrequent) are curable by surgery or present a slow progression, grades II to IV require heavy treatment (surgery and radio-chemotherapy), and are associated with a prognosis ranging from 10-15 years for grade II to only 15 mont\u2026",
+      "date": "2021-11-04",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Intraoperative Rapid Diagnosis of Glioma Based on Fusion of Magnetic Resonance and Ultrasound Imaging",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05656053",
+      "summary": "The aim of this observational study is to enable rapid diagnosis of molecular biomarkers in patients during surgery by medical imaging and artificial intelligence models, to help clinicians with strategies to maximize safe resection of gliomas. The main questions it aims to answer are: 1. To solve the current clinical shortcomings of intraoperative molecular diagnosis, which is time-consuming and complex, and enables rapid and automated molecular\u2026",
+      "date": "2021-11-15",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "FLUOPANC-trial - Fluorescence-guided Surgery of Pancreatic and Bileduct Tumors Using cRGD-ZW800-1",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05518071",
+      "summary": "Pancreas as well as Cholangiocarcinoma have a dismal prognosis at time of diagnosis, due to late onset of clinical symptoms, patients present with advance disease. Complete surgical resection is the only potential curative treatment, however only a small percentage is eligible for upfront total surgical resection due to extension into anatomical related important vascular structures. Neoadjuvant chemo(radio)therapy has become the standard treatme\u2026",
+      "date": "2022-11-09",
+      "relevance_tags": [
+        "fluorescence-guided surgery"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "SteamOne - Prospective Database for Rezum Water Vapor Therapy of the Prostate",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05495633",
+      "summary": "This study is to assess the clinical data of Rezum (water vapor therapy) in patients with BPO (benign prostate obstruction) and male LUTS (lower urinary tract symptoms) in terms of efficacy, durability and safety in a large, prospective, multi-center cohort consisting of 1000 \"real-life\" patients with a follow-up of 5 years.",
+      "date": "2022-12-16",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Predicting Outcome of Cytoreduction in Advanced Ovarian Cancer",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06017557",
+      "summary": "PREDAtOOR is a pilot study and this study aims at improving the selection of the best treatment strategy for patients with advanced ovarian cancer by using Camera Vision (CV) to predict outcomes of cyto reduction at the time of Diagnostic laparoscopy.",
+      "date": "2023-01-02",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Evaluation of Different Methods of Ultrasound Image Analysis for Real-time Monitoring of HIFU Prostate Cancer Treatment",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05714774",
+      "summary": "The ELASTO-US study is a single center feasibility study to evaluate 3 methods of analyzing real-time ultrasound images acquired during High Intensity Focused Ultrasound (HIFU) treatment in patients with localized prostate cancer. Real-time ultrasound acquisitions will be programmed at specific times and recorded during HIFU treatment. At the end of the treatment, these recordings will be exported in an anonymized way and analyzed according to th\u2026",
+      "date": "2023-03-09",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "IDEAL Study: Blinded RCT for the Impact of AI Model for Cerebral Aneurysms Detection on Patients' Diagnosis and Outcomes",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06118840",
+      "summary": "This study (IEDAL study) intends to prospectively enroll more than 6450 patients who will undergo head CT angiography (CTA) scanning in the outpatient clinic. It will be carried out in 21 hospitals in more than 10 provinces in China. The patient's head CTA images will be randomly assigned to the True-AI and Sham-AI group with a ratio of 1:1, and the patients and radiologists are unaware of the allocation. The primary outcomes are sensitivity and \u2026",
+      "date": "2024-05-20",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Image-Guided Surgery In The Treatment Of Rectal Cancer (AR_CRC)",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06805045",
+      "summary": "The proposed study is addressed to introduce new Image-Guided Surgery (IGS) tools to assist mini-invasive surgical procedures of anterior rectal resection (TME; TA-TME, TTSS) performed with laparoscopic or robotic procedure. In details, the idea is to provide augmented reality (AR) guidance during robotic-assisted and laparoscopic surgeries, by overlaying the preoperative 3D virtual anatomical models to intraoperative surgical images (3D AR guida\u2026",
+      "date": "2024-05-29",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Artificial Intelligence-Enabled Skin Perforator Segmentation",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06634472",
+      "summary": "Computer-assisted surgery has revolutionized reconstruction with more efficient, accurate, and predictable surgery, as reported in our previous studies. Skin perforators are vessels that travel through muscles and septa to supply the skin. The identification of skin perforators is crucial for a safe fibula osteocutaneous free flap harvest with computer-assisted surgery. Different methods have been proposed in the past, each of which has its own l\u2026",
+      "date": "2024-12-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Exploratory Study on NIRFI Technology Combined with ICG Guided Cervical Cancer Lymph Node Metastasis",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06840418",
+      "summary": "The goal of this exploratory study is to exploring the lymph node metastasis, tumor margin, blood vessels, ureters, and nerve imaging in cervical cancer surgery using near-infrared fluorescence imaging technology combined with indocyanine green, and establishing an artificial intelligence model for predicting lymph node metastasis of cervical cancer to guide the advancement of refined surgical procedures.And the focus of this study is to investig\u2026",
+      "date": "2025-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Using 3D Kidney Model Based on Artificial Intelligence to Assist Partial Nephrectomy: A Prospective Validation Study",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07020169",
+      "summary": "The goal of this study is to develop a real-time artificial intelligence-driven 3D kidney model to assist robotic or laparoscopic partial nephrectomy: \u2022 Can this AI-powered model optimize the workflow of partial nephrectomy and enhance surgical benefits?",
+      "date": "2025-05-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "AI-Guided Hematoma Aspiration vs. Conservative Treatment for Spontaneous ICH",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07077343",
+      "summary": "The effectiveness of traditional craniotomy in the treatment of intracerebral hemorrhage remains controversial. Minimally invasive surgery, specially, image-guided hematoma aspiration, proves to be effective and may have some advantages compared with craniotomy. This multicenter randomized controlled trial aims to evaluate and compare the clinical efficacy of two minimally invasive treatment strategies for patients with spontaneous supratentorial\u2026",
+      "date": "2025-07-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "AI-Driven Dynamic Prediction of Non-Target Lesion Progression After PCI: A Chinese Multicenter Cohort Study",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07312318",
+      "summary": "Coronary artery disease remains a leading cause of global mortality. Although percutaneous coronary intervention (PCI) improves patient outcomes, the long-term risk of major adverse cardiovascular events (MACE) driven by the progression of non-target lesions (NTLs) remains substantial and continues to increase, while current risk stratification tools remain inadequate for predicting NTL progression. This multicenter cohort study aims to develop a\u2026",
+      "date": "2025-09-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "RAINBOW-ICH Trial of AI Guided Minimally Invasive Neurosurgery for ICH",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07205263",
+      "summary": "Intracerebral hemorrhage (ICH) is one of the most devastating forms of stroke, with high rates of death and disability worldwide. Despite advances in medical and surgical care, effective therapeutic options remain limited. To address this gap, the RAINBOW-ICH trial has been designed as a nationwide, multicenter, randomized umbrella trial evaluating the efficacy and safety of AI-assisted, robotic-guided minimally invasive neurosurgery compared wit\u2026",
+      "date": "2025-09-30",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    }
+  ]
+}
