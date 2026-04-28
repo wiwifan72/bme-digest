@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BME Digest — 2026-04-28</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08080f; --s1:#0f0f1a; --s2:#16162a;
+    --b1:rgba(255,255,255,0.06); --b2:rgba(255,255,255,0.11);
+    --t1:#ddd9f5; --t2:#8883a8; --t3:#4e4b68;
+    --p:#7c6cfc; --g:#4fc3a1; --o:#f0874a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--t1);font-family:"IBM Plex Sans",sans-serif;
+       font-weight:300;min-height:100vh;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  /* LAYOUT */
+  .shell{display:grid;grid-template-columns:1fr 260px;gap:0;max-width:1200px;
+          margin:0 auto;padding:0 24px 80px;align-items:start}
+  .main{padding:0 32px 0 0;border-right:1px solid var(--b1)}
+  .sidebar{padding:32px 0 0 28px;position:sticky;top:24px}
+  /* HEADER */
+  .header{padding:48px 0 36px}
+  .header-kicker{font-family:"IBM Plex Mono",monospace;font-size:10px;
+                  letter-spacing:0.14em;color:var(--p);text-transform:uppercase;
+                  margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .header-kicker::before{content:"";width:18px;height:1px;background:var(--p)}
+  h1{font-family:"Syne",sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;
+      letter-spacing:-0.025em;line-height:1.05;margin-bottom:8px}
+  h1 em{color:var(--p);font-style:normal}
+  .header-sub{font-size:13px;color:var(--t2)}
+  /* STAT ROW */
+  .stats{display:flex;gap:20px;margin:24px 0 8px;flex-wrap:wrap}
+  .stat{background:var(--s1);border:1px solid var(--b1);border-radius:10px;
+         padding:12px 16px;min-width:100px}
+  .stat-num{font-family:"Syne",sans-serif;font-size:22px;font-weight:800;
+             line-height:1}
+  .stat-label{font-size:11px;color:var(--t2);margin-top:3px}
+  /* SECTIONS */
+  .section{margin-bottom:36px}
+  .section-header{display:flex;align-items:center;gap:8px;margin-bottom:16px;
+                   font-family:"IBM Plex Mono",monospace;font-size:11px;
+                   letter-spacing:0.1em;text-transform:uppercase}
+  .section-count{background:var(--s2);padding:2px 7px;border-radius:10px;
+                  font-size:10px;color:var(--t2)}
+  .section-line{flex:1;height:1px;background:var(--b1)}
+  /* CARDS */
+  .card{background:var(--s1);border:1px solid var(--b1);border-radius:12px;
+         padding:14px 16px;margin-bottom:10px;
+         transition:border-color 0.15s,background 0.15s}
+  .card:hover{border-color:var(--b2);background:var(--s2)}
+  .card-title{font-family:"Syne",sans-serif;font-size:14px;font-weight:700;
+               color:var(--t1);display:block;margin-bottom:6px;line-height:1.35}
+  .card-title:hover{color:var(--p)}
+  .card-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+              margin-bottom:6px;font-size:11px;font-family:"IBM Plex Mono",monospace}
+  .source-pill{background:var(--s2);border:1px solid var(--b1);padding:1px 7px;
+                border-radius:4px;font-size:10px;color:var(--t2)}
+  .card-summary{font-size:12px;color:var(--t2);line-height:1.65;
+                 display:-webkit-box;-webkit-line-clamp:3;
+                 -webkit-box-orient:vertical;overflow:hidden}
+  /* SIDEBAR */
+  .sidebar-block{margin-bottom:28px}
+  .sidebar-title{font-family:"IBM Plex Mono",monospace;font-size:10px;
+                  letter-spacing:0.12em;text-transform:uppercase;color:var(--t3);
+                  margin-bottom:12px}
+  .kw-row{display:flex;justify-content:space-between;align-items:center;
+           padding:5px 0;border-bottom:1px solid var(--b1)}
+  .kw-label{font-size:12px;color:var(--t2)}
+  .kw-num{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--p)}
+  .refresh-note{font-size:11px;color:var(--t3);line-height:1.6;margin-top:8px}
+  /* FILTER BAR */
+  .filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .filter-btn{background:var(--s1);border:1px solid var(--b1);border-radius:6px;
+               padding:5px 12px;font-size:12px;color:var(--t2);cursor:pointer;
+               font-family:"IBM Plex Sans",sans-serif;transition:all 0.15s}
+  .filter-btn:hover,.filter-btn.active{background:var(--p);border-color:var(--p);
+                                        color:#fff}
+  /* SEARCH */
+  .search-wrap{margin-bottom:20px}
+  #search{width:100%;background:var(--s1);border:1px solid var(--b1);
+           border-radius:8px;padding:9px 14px;color:var(--t1);font-size:13px;
+           font-family:"IBM Plex Sans",sans-serif;outline:none;
+           transition:border-color 0.15s}
+  #search:focus{border-color:var(--p)}
+  #search::placeholder{color:var(--t3)}
+  /* RESPONSIVE */
+  @media(max-width:800px){
+    .shell{grid-template-columns:1fr;padding:0 16px 60px}
+    .main{padding:0;border-right:none}
+    .sidebar{padding:0;border-top:1px solid var(--b1);margin-top:32px;
+              position:static}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+<main class="main">
+  <div class="header">
+    <div class="header-kicker">Lampe Joint BME · UNC Chapel Hill</div>
+    <h1>Bioimaging<br><em>Daily Digest</em></h1>
+    <p class="header-sub">Auto-generated · April 28, 2026 at 08:29 UTC</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num" style="color:var(--p)">18</div>
+        <div class="stat-label">Papers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--g)">0</div>
+        <div class="stat-label">News</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--o)">18</div>
+        <div class="stat-label">Trials</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">36</div>
+        <div class="stat-label">Total</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-wrap">
+    <input id="search" type="text" placeholder="Filter by keyword, source, or tag…"
+           oninput="filterCards(this.value)">
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+    <button class="filter-btn" onclick="setFilter('paper',this)">Papers</button>
+    <button class="filter-btn" onclick="setFilter('news',this)">News</button>
+    <button class="filter-btn" onclick="setFilter('trial',this)">Trials</button>
+  </div>
+
+  <div id="content">
+    
+        <section class="section">
+          <div class="section-header">
+            <span style="color:#7c6cfc;margin-right:8px">◈</span>
+            <span style="color:#7c6cfc">New Papers</span>
+            <span class="section-count">18</span>
+            <span class="section-line"></span>
+          </div>
+          
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://www.semanticscholar.org/paper/ef340e26d49e58fbd1622f6d4d7ae755dde3939b" target="_blank"
+             rel="noopener noreferrer">Intraoperative AI-Based Imaging May Enable Maximal Glioma Resection</a>
+          <div class="card-meta">
+            <span class="source-pill">Semantic Scholar</span>
+            <span style="color:#5a5878">2024</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">intraoperative AI</span></div>
+          
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2407.02653v1" target="_blank"
+             rel="noopener noreferrer">Joint Segmentation and Image Reconstruction with Error Prediction in Photoacoustic Imaging using Deep Learning</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2024-07-02</span>
+            <span style="color:#5a5878;font-size:11px">Ruibo Shang, Geoffrey P. Luke, Matthew O'Donnell</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic imaging</span></div>
+          <p class="card-summary">Deep learning has been used to improve photoacoustic (PA) image reconstruction. One major challenge is that errors cannot be quantified to validate predictions when ground truth is unknown. Validation is key to quantitative applications, especially using limited-bandwidth ultrasonic linear detector arrays. Here, we propose a hybrid Bayesian convolutional neural network (Hybrid-BCNN) to jointly predict PA image and segmentation with error (uncerta…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2407.03663v1" target="_blank"
+             rel="noopener noreferrer">Limited-View Photoacoustic Imaging Reconstruction Via High-quality Self-supervised Neural Representation</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2024-07-04</span>
+            <span style="color:#5a5878;font-size:11px">Youshen xiao, Yuting Shen, Bowei Yao…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic imaging</span></div>
+          <p class="card-summary">In practical applications within the human body, it is often challenging to fully encompass the target tissue or organ, necessitating the use of limited-view arrays, which can lead to the loss of crucial information. Addressing the reconstruction of photoacoustic sensor signals in limited-view detection spaces has become a focal point of current research. In this study, we introduce a self-supervised network termed HIgh-quality Self-supervised ne…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2409.16564v1" target="_blank"
+             rel="noopener noreferrer">Normalizing flow regularization for photoacoustic tomography</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2024-09-25</span>
+            <span style="color:#5a5878;font-size:11px">Chao Wang, Alexandre H. Thiery</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic tomography</span></div>
+          <p class="card-summary">Proper regularization is crucial in inverse problems to achieve high-quality reconstruction, even with an ill-conditioned measurement system. This is particularly true for three-dimensional photoacoustic tomography, which is computationally demanding and requires rapid scanning, often leading to incomplete measurements. Deep neural networks, known for their efficiency in handling big data, are anticipated to be adept at extracting underlying info…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://www.semanticscholar.org/paper/478a1a0ee72ec76e3822057a65412be4fdb0f2ee" target="_blank"
+             rel="noopener noreferrer">Significant Radiation Reduction Using Cloud-Based AI Imaging in Manually Matched Cohort of Complex Aneurysm Repair.</a>
+          <div class="card-meta">
+            <span class="source-pill">Semantic Scholar</span>
+            <span style="color:#5a5878">2025</span>
+            <span style="color:#5a5878;font-size:11px">S. Sorondo, Arash Fereydooni, V. Ho…</span><span style="color:#f0874a;font-size:11px;margin-left:10px">↑ 1 citations</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">intraoperative imaging</span></div>
+          <p class="card-summary">OBJECTIVE Cloud-based, surgical augmented intelligence (Cydar Medical, Cambridge, UK) can be used for surgical planning and intraoperative imaging guidance during complex endovascular aortic procedures. We aim to evaluate radiation exposure, operative safety metrics, and post-operative renal outcomes following implementation of Cydar imaging guidance using a manually matched cohort of aortic procedures. METHODS We retrospectively reviewed our pro…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://www.semanticscholar.org/paper/7863ec020fecb8dadc60a5dd21828651ab31aeb0" target="_blank"
+             rel="noopener noreferrer">ADVANCING ORTHOPEDIC TRAUMA SURGERY: THE INTEGRATION OF AI, 3D NAVIGATION, AND ROBOTIC INTRAOPERATIVE IMAGING SYSTEMS</a>
+          <div class="card-meta">
+            <span class="source-pill">Semantic Scholar</span>
+            <span style="color:#5a5878">2025</span>
+            <span style="color:#5a5878;font-size:11px">Florian Gebhard</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">intraoperative imaging</span></div>
+          <p class="card-summary">Intraoperative imaging systems have been established in modern operating rooms for many years. However, over the past decade, their technical capabilities and specifications have evolved rapidly. Beyond the improvements in image quality, current systems now enable automated intraoperative image analyses—such as implant detection and artifact correction through gray level optimization.Robotic enhancements have transformed these imaging modalities …</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://www.semanticscholar.org/paper/da6ae7837af6823f3cb36110af7311f8dc60a9ef" target="_blank"
+             rel="noopener noreferrer">Advancing Precision Surgery Through Intraoperative Imaging and AI Integration</a>
+          <div class="card-meta">
+            <span class="source-pill">Semantic Scholar</span>
+            <span style="color:#5a5878">2025</span>
+            <span style="color:#5a5878;font-size:11px">K. Yoshimitsu, Toshihiro Okamoto, Chisa Shibayama…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">intraoperative imaging</span></div>
+          
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://www.semanticscholar.org/paper/8cda58c7e57708d149f5de030d33f538855254ad" target="_blank"
+             rel="noopener noreferrer">Abstract 4517: Comprehensive intraoperative imaging of surgical margins with AI-driven open-top light-sheet microscopy</a>
+          <div class="card-meta">
+            <span class="source-pill">Semantic Scholar</span>
+            <span style="color:#5a5878">2025</span>
+            <span style="color:#5a5878;font-size:11px">David Brenes, Qinghua Han, Rui Wang…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">intraoperative imaging</span></div>
+          <p class="card-summary">Surgeons rely on subjective visual and tactile feedback to differentiate tumors from adjacent normal tissue, which lacks accuracy and may make complete resection challenging. Over 20% of breast and 40% of head & neck cancer surgeries yield positive margins—cancerous cells at the edge of the resected specimen—requiring costly additional treatments with inferior outcomes. When pathologists assess margins, they quantify the tumor's proximity to the …</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2506.03175v1" target="_blank"
+             rel="noopener noreferrer">Super-temporal-resolution Photoacoustic Imaging with Dynamic Reconstruction through Implicit Neural Representation in Sparse-view</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2025-05-29</span>
+            <span style="color:#5a5878;font-size:11px">Youshen Xiao, Yiling Shi, Ruixi Sun…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic imaging</span></div>
+          <p class="card-summary">Dynamic Photoacoustic Computed Tomography (PACT) is an important imaging technique for monitoring physiological processes, capable of providing high-contrast images of optical absorption at much greater depths than traditional optical imaging methods. However, practical instrumentation and geometric constraints limit the number of acoustic sensors available around the imaging target, leading to sparsity in sensor data. Traditional photoacoustic (…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2507.15777v2" target="_blank"
+             rel="noopener noreferrer">Label tree semantic losses for rich multi-class medical image segmentation</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2025-07-21</span>
+            <span style="color:#5a5878;font-size:11px">Junwen Wang, Oscar MacCormac, William Rochford…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">medical image segmentation</span></div>
+          <p class="card-summary">Rich and accurate medical image segmentation is poised to underpin the next generation of AI-defined clinical practice by delineating critical anatomy for pre-operative planning, guiding real-time intra-operative navigation, and supporting precise post-operative assessment. However, commonly used learning methods for medical and surgical imaging segmentation tasks penalise all errors equivalently and thus fail to exploit any inter-class semantics…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2509.09894v2" target="_blank"
+             rel="noopener noreferrer">Physics-Aware Neural Operators for Direct Inversion in 3D Photoacoustic Tomography</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2025-09-11</span>
+            <span style="color:#5a5878;font-size:11px">Jiayun Wang, Yousuf Aborahama, Arya Khokhar…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic tomography</span></div>
+          <p class="card-summary">Learning physics-constrained inverse operators-rather than post-processing physics-based reconstructions-is a broadly applicable strategy for problems with expensive forward models. We demonstrate this principle in three-dimensional photoacoustic computed tomography (3D PACT), where current systems demand dense transducer arrays and prolonged scans, restricting clinical translation. We introduce PANO (PACT imaging neural operator), an end-to-end …</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2511.06580v1" target="_blank"
+             rel="noopener noreferrer">Compressive Sensing Photoacoustic Imaging Receiver with Matrix-Vector-Multiplication SAR ADC</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2025-11-09</span>
+            <span style="color:#5a5878;font-size:11px">Huan-Cheng Liao, Shunyao Zhang, Yumin Su…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic imaging</span></div>
+          <p class="card-summary">Wearable photoacoustic imaging devices hold great promise for continuous health monitoring and point-of-care diagnostics. However, the large data volume generated by high-density transducer arrays presents a major challenge for realizing compact and power-efficient wearable systems. This paper presents a photoacoustic imaging receiver (RX) that embeds compressive sensing directly into the hardware to address this bottleneck. The RX integrates 16 …</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://pubmed.ncbi.nlm.nih.gov/41985509/" target="_blank"
+             rel="noopener noreferrer">Deep learning for restoring MPI system matrices using simulated training data.</a>
+          <div class="card-meta">
+            <span class="source-pill">PubMed</span>
+            <span style="color:#5a5878">2026</span>
+            <span style="color:#5a5878;font-size:11px">Tsanda, Reiss, Scheffler…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">magnetic particle imaging</span></div>
+          <p class="card-summary">Magnetic particle imaging reconstructs tracer distributions using a system matrix obtained through time-consuming, noise-prone calibration measurements. Methods for addressing imperfections in measured system matrices increasingly rely on deep neural networks, yet curated training data remain scarce. This study evaluates whether physics-based simulated system matrices can be used to train deep learning models for different system matrix restorati…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://pubmed.ncbi.nlm.nih.gov/41880760/" target="_blank"
+             rel="noopener noreferrer">TSMPI-Net: a time-series generative adversarial network for short-frame-interval magnetic particle imaging.</a>
+          <div class="card-meta">
+            <span class="source-pill">PubMed</span>
+            <span style="color:#5a5878">2026</span>
+            <span style="color:#5a5878;font-size:11px">Gao, Zhang, Zhao…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">magnetic particle imaging</span><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">MPI reconstruction</span></div>
+          <p class="card-summary">Objective.Magnetic particle imaging (MPI) is an emerging imaging modality that offers high sensitivity and the potential for high-speed imaging. In many MPI applications, the imaged object moves over time, requiring reconstruction of temporally coherent image sequences at short frame intervals. However, conventional MPI reconstruction methods, such as the system matrix method and X-space method, typically reconstruct frames in isolation and fail …</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2603.12010v2" target="_blank"
+             rel="noopener noreferrer">First in-vivo human magnetic particle imaging</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2026-03-12</span>
+            <span style="color:#5a5878;font-size:11px">Patrick Vogel, Thomas Kampf, Martin A. Rückert…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">magnetic particle imaging</span></div>
+          <p class="card-summary">Magnetic particle imaging (MPI) is a tracer-based technique that directly detects the distribution of magnetic iron-oxide nanoparticles with millisecond temporal resolution and no tissue background. Despite extensive preclinical work, in-vivo application of MPI in humans has not previously been reported. Here, we report the first in-vivo human MPI angiography, visualizing venous perfusion of the upper extremity using a human-scale scanner and cli…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2603.25945v1" target="_blank"
+             rel="noopener noreferrer">Adapting Segment Anything Model 3 for Concept-Driven Lesion Segmentation in Medical Images: An Experimental Study</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2026-03-26</span>
+            <span style="color:#5a5878;font-size:11px">Guoping Xu, Jayaram K. Udupa, Yubing Tong…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">medical image segmentation</span></div>
+          <p class="card-summary">Accurate lesion segmentation is essential in medical image analysis, yet most existing methods are designed for specific anatomical sites or imaging modalities, limiting their generalizability. Recent vision-language foundation models enable concept-driven segmentation in natural images, offering a promising direction for more flexible medical image analysis. However, concept-prompt-based lesion segmentation, particularly with the latest Segment …</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2604.08045v1" target="_blank"
+             rel="noopener noreferrer">Adapting Foundation Models for Annotation-Efficient Adnexal Mass Segmentation in Cine Images</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2026-04-09</span>
+            <span style="color:#5a5878;font-size:11px">Francesca Fati, Alberto Rota, Adriana V. Gregory…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">medical image segmentation</span></div>
+          <p class="card-summary">Adnexal mass evaluation via ultrasound is a challenging clinical task, often hindered by subjective interpretation and significant inter-observer variability. While automated segmentation is a foundational step for quantitative risk assessment, traditional fully supervised convolutional architectures frequently require large amounts of pixel-level annotations and struggle with domain shifts common in medical imaging. In this work, we propose a la…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2604.19512v1" target="_blank"
+             rel="noopener noreferrer">Defining Robust Ultrasound Quality Metrics via an Ultrasound Foundation Model</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2026-04-21</span>
+            <span style="color:#5a5878;font-size:11px">Ziyang Huang, Bingyan Li, Chen Ma…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">ultrasound reconstruction</span></div>
+          <p class="card-summary">Clinicians lack a principled framework to quantify diagnostic utility in ultrasound reconstructions. Existing standards like PSNR and VGG-LPIPS are inadequate, failing to account for modality-specific physics or the structural nuances of acoustic imaging. We close this gap with a TinyUSFM-based evaluation framework featuring two distinct metrics: TinyUSFM-uLPIPS, a full-reference perceptual distance based on multi-layer token relations, and TinyU…</p>
+        </div>
+        </section>
+        <section class="section">
+          <div class="section-header">
+            <span style="color:#f0874a;margin-right:8px">◎</span>
+            <span style="color:#f0874a">Clinical Trials</span>
+            <span class="section-count">18</span>
+            <span class="section-line"></span>
+          </div>
+          
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT03155308" target="_blank"
+             rel="noopener noreferrer">Validation of the NICE Classification Using Pentax Chromoendoscopy</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2017-04-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">Colorectal cancer (CRC) is the most frequent gastrointestinal tumor and the second cause of cancer related death. Colonoscopy is currently the recommended method for detection of polyps and cancers in the colon. Removal of all adenomatous polyps during colonoscopy has become worldwide a standard procedure as it has been demonstrated to significantly reduce colorectal cancer incidence and mortality. It is routine practice to remove all the detecte…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT04469244" target="_blank"
+             rel="noopener noreferrer">Evaluation of the Use of Radiomics in 18F-FDOPA PET Examinations for the Characterization of Gliomas</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2020-07-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The evaluation of gliomas in imaging represents a real challenge today, at the initial diagnosis, for therapeutic planning or follow-up treatment of these lesions. There is an urgent need for non-invasive imaging tools to evaluate a glioma throughout its management. At present, the diagnosis of certainty is only obtained through an anatomo-pathological analysis with sampling during an invasive procedure (surgery or biopsy). Magnetic resonance ima…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT05792280" target="_blank"
+             rel="noopener noreferrer">Clinical Research on a Novel Deep-learning Based System in Mediastinal Endoscopic Ultrasound Scanning</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2021-01-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The goal of this clinical trial is to develop and verify the auxiliary role of the artificial intelligence system in mediastinal ultrasound endoscopic scanning. The main questions it aims to answer are as follows: 1.The comparison of the image recognition accuracy between the artificial intelligence system and the ultrasound endoscopist; 2. Whether the artificial intelligence system can improve the integrity and efficiency of the mediastinum scan…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT05159206" target="_blank"
+             rel="noopener noreferrer">CT-based 3D Planning, Computer Navigation and Subsequent Migration Analysis in Total Hip Arthroplasty</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2021-04-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The aim of this study is to evaluate a new technique that optimizes the prosthesis position for patients who undergo total hip arthroplasty surgery. Today, most surgeons take a regular X-ray (2D) to plan the surgery. In this study, patients will do a computed tomography (CT) before surgery, and with the use of the new system, the investigators will be able to make a more accurate plan when it comes to prosthetic placement and leg length adjustmen…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06480045" target="_blank"
+             rel="noopener noreferrer">Usage Of Artificial Intelligence-Integrated Usg In Application of Pectoral Block In Mastectomies</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2021-11-05</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The investigator's goal in this study is to apply PECS II block, before starting surgery, by either conventional USG or artificial intelligence integrated USG to patients who will undergo mastectomy under general anesthesia to determine the effect of the block on hemodynamics and opioid consumption in the intraoperative period. Besides, the investigatorwanted to investigate the contribution of artificial intelligence integrated USG use in the suc…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT05656053" target="_blank"
+             rel="noopener noreferrer">Intraoperative Rapid Diagnosis of Glioma Based on Fusion of Magnetic Resonance and Ultrasound Imaging</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2021-11-15</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The aim of this observational study is to enable rapid diagnosis of molecular biomarkers in patients during surgery by medical imaging and artificial intelligence models, to help clinicians with strategies to maximize safe resection of gliomas. The main questions it aims to answer are: 1. To solve the current clinical shortcomings of intraoperative molecular diagnosis, which is time-consuming and complex, and enables rapid and automated molecular…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT05971069" target="_blank"
+             rel="noopener noreferrer">Real-time Identification of the Aberrant Left Hepatic Arterial Territory in the Liver Using Near-infrared Fluorescence Imaging</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2021-12-17</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">" Hepatic artery variants are occasionally seen, especially 20-30% of aberrant left hepatic artery. In radical gastrectomy, decision for aberrant left hepatic artery(ALHA) ligation should consider the oncologic safety and liver-related complication. Theoretically, the ALHA preservation is the most ideal in the aspect of liver function protection. However, it is technically difficult which consumes much time. Not only that, oncologic safety could …</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06299449" target="_blank"
+             rel="noopener noreferrer">Artificial Intelligence Assisted Socket Shield With Computer Guided Implant Placement</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2024-03-05</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">Aim of the current randomized clinical trial is to evaluate and compare the effectiveness of computer-guided immediate implant placement performed simultaneously with artificial intelligence assisted socket shield technique versus conventional approach.</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06118840" target="_blank"
+             rel="noopener noreferrer">IDEAL Study: Blinded RCT for the Impact of AI Model for Cerebral Aneurysms Detection on Patients' Diagnosis and Outcomes</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2024-05-20</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">This study (IEDAL study) intends to prospectively enroll more than 6450 patients who will undergo head CT angiography (CTA) scanning in the outpatient clinic. It will be carried out in 21 hospitals in more than 10 provinces in China. The patient's head CTA images will be randomly assigned to the True-AI and Sham-AI group with a ratio of 1:1, and the patients and radiologists are unaware of the allocation. The primary outcomes are sensitivity and …</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06472440" target="_blank"
+             rel="noopener noreferrer">Evaluation of the Use of a Method "Radiomics" for DOPA PET in Gliomas</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2024-11-16</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">: The evaluation of gliomas in imaging represents a real challenge today, at the initial diagnosis, for therapeutic planning or follow-up treatment of these lesions. There is an urgent need for non-invasive imaging tools to evaluate a glioma throughout its management. At present, the diagnosis of certainty is only obtained through an anatomo-pathological analysis with sampling during an invasive procedure (surgery or biopsy). Magnetic resonance i…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06634472" target="_blank"
+             rel="noopener noreferrer">Artificial Intelligence-Enabled Skin Perforator Segmentation</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2024-12-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">Computer-assisted surgery has revolutionized reconstruction with more efficient, accurate, and predictable surgery, as reported in our previous studies. Skin perforators are vessels that travel through muscles and septa to supply the skin. The identification of skin perforators is crucial for a safe fibula osteocutaneous free flap harvest with computer-assisted surgery. Different methods have been proposed in the past, each of which has its own l…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06840418" target="_blank"
+             rel="noopener noreferrer">Exploratory Study on NIRFI Technology Combined with ICG Guided Cervical Cancer Lymph Node Metastasis</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2025-01-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The goal of this exploratory study is to exploring the lymph node metastasis, tumor margin, blood vessels, ureters, and nerve imaging in cervical cancer surgery using near-infrared fluorescence imaging technology combined with indocyanine green, and establishing an artificial intelligence model for predicting lymph node metastasis of cervical cancer to guide the advancement of refined surgical procedures.And the focus of this study is to investig…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06791395" target="_blank"
+             rel="noopener noreferrer">Real-time AI-assisted Endocyroscopy for the Diagnosis of Colorectal Lesions</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2025-02-05</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">Colorectal cancer (CRC) is the third most common malignancy and the second leading cause of cancer-related death worldwide. Colonoscopy is considered the preferred method of screening for colorectal cancer, and early and resection detection of colorectal neoplastic lesions can significantly reduce colorectal cancer morbidity and mortality. In order to improve the diagnostic accuracy of endoscopy for colorectal lesions, many endoscopic techniques,…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT07020169" target="_blank"
+             rel="noopener noreferrer">Using 3D Kidney Model Based on Artificial Intelligence to Assist Partial Nephrectomy: A Prospective Validation Study</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2025-05-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The goal of this study is to develop a real-time artificial intelligence-driven 3D kidney model to assist robotic or laparoscopic partial nephrectomy: • Can this AI-powered model optimize the workflow of partial nephrectomy and enhance surgical benefits?</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06957600" target="_blank"
+             rel="noopener noreferrer">The Comparison of Navigational Bronchoscopic and CT-Guided Preoperative Markings in Minimally Invasive Thoracic Surgery</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2025-06-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">This clinical trial aims to determine whether navigational bronchoscopic or CT-guided marking is more effective for localizing small pulmonary nodules in minimally invasive thoracic surgery. It will also assess the safety of both methods. The main questions to answer are: * Which of the two methods enables the surgeon to locate the lesion more quickly during surgery? * Does using the newer navigational bronchoscopic method reduce the number of in…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT07312318" target="_blank"
+             rel="noopener noreferrer">AI-Driven Dynamic Prediction of Non-Target Lesion Progression After PCI: A Chinese Multicenter Cohort Study</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2025-09-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">Coronary artery disease remains a leading cause of global mortality. Although percutaneous coronary intervention (PCI) improves patient outcomes, the long-term risk of major adverse cardiovascular events (MACE) driven by the progression of non-target lesions (NTLs) remains substantial and continues to increase, while current risk stratification tools remain inadequate for predicting NTL progression. This multicenter cohort study aims to develop a…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT07205263" target="_blank"
+             rel="noopener noreferrer">RAINBOW-ICH Trial of AI Guided Minimally Invasive Neurosurgery for ICH</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2025-09-30</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">Intracerebral hemorrhage (ICH) is one of the most devastating forms of stroke, with high rates of death and disability worldwide. Despite advances in medical and surgical care, effective therapeutic options remain limited. To address this gap, the RAINBOW-ICH trial has been designed as a nationwide, multicenter, randomized umbrella trial evaluating the efficacy and safety of AI-assisted, robotic-guided minimally invasive neurosurgery compared wit…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06937138" target="_blank"
+             rel="noopener noreferrer">Artificial Intelligence-Assisted vs Surgeon-Planned Trajectories in Freehand Femoral Neck Screw Fixation</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2025-11-14</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The goal of this clinical trial is to compare two different methods of screw path planning-AI-assisted versus surgeon-directed-in freehand percutaneous femoral neck fracture fixation surgery. The study will include adult patients diagnosed with femoral neck fractures who are eligible for cannulated screw fixation under fluoroscopic guidance.The main questions it aims to answer are: Does AI-assisted screw path planning improve the radiographic acc…</p>
+        </div>
+        </section>
+  </div>
+</main>
+
+<aside class="sidebar">
+  <div class="sidebar-block">
+    <div class="sidebar-title">Top Keywords</div>
+    <div class="kw-row"><span class="kw-label">surgical AI</span><span class="kw-num">18</span></div><div class="kw-row"><span class="kw-label">photoacoustic imaging</span><span class="kw-num">4</span></div><div class="kw-row"><span class="kw-label">intraoperative imaging</span><span class="kw-num">4</span></div><div class="kw-row"><span class="kw-label">medical image segmentation</span><span class="kw-num">3</span></div><div class="kw-row"><span class="kw-label">magnetic particle imaging</span><span class="kw-num">3</span></div><div class="kw-row"><span class="kw-label">photoacoustic tomography</span><span class="kw-num">2</span></div><div class="kw-row"><span class="kw-label">intraoperative AI</span><span class="kw-num">1</span></div><div class="kw-row"><span class="kw-label">MPI reconstruction</span><span class="kw-num">1</span></div>
+  </div>
+  <div class="sidebar-block">
+    <div class="sidebar-title">By Source</div>
+    <div class="kw-row"><span class="kw-label">ClinicalTrials.gov</span><span class="kw-num">18</span></div><div class="kw-row"><span class="kw-label">arXiv</span><span class="kw-num">11</span></div><div class="kw-row"><span class="kw-label">Semantic Scholar</span><span class="kw-num">5</span></div><div class="kw-row"><span class="kw-label">PubMed</span><span class="kw-num">2</span></div>
+  </div>
+  <div class="sidebar-block">
+    <div class="sidebar-title">About</div>
+    <p class="refresh-note">
+      Refreshes daily via GitHub Actions.<br>
+      Sources: arXiv · PubMed · Semantic Scholar ·
+      OpenAlex · ClinicalTrials.gov · 9 RSS feeds ·
+      3 direct scrapes.<br><br>
+      Edit <code>KEYWORDS</code> in
+      <code>scripts/scraper.py</code> to tune relevance.
+    </p>
+  </div>
+</aside>
+</div>
+
+<script>
+let activeFilter = 'all';
+
+function setFilter(cat, btn) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function filterCards(query) {
+  applyFilters(query);
+}
+
+function applyFilters(query) {
+  const q = (query !== undefined ? query : document.getElementById('search').value)
+    .toLowerCase().trim();
+  document.querySelectorAll('.card').forEach(card => {
+    const text  = card.innerText.toLowerCase();
+    const cat   = card.dataset.cat || 'news';
+    const catOk = activeFilter === 'all' || cat === activeFilter;
+    const qOk   = !q || text.includes(q);
+    card.style.display = (catOk && qOk) ? '' : 'none';
+  });
+  // hide empty sections
+  document.querySelectorAll('.section').forEach(sec => {
+    const visible = [...sec.querySelectorAll('.card')]
+      .some(c => c.style.display !== 'none');
+    sec.style.display = visible ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
