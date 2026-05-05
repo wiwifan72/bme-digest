@@ -1,0 +1,295 @@
+{
+  "generated": "2026-05-05",
+  "total": 21,
+  "articles": [
+    {
+      "title": "Deep learning for restoring MPI system matrices using simulated training data.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41985509/",
+      "summary": "Magnetic particle imaging reconstructs tracer distributions using a system matrix obtained through time-consuming, noise-prone calibration measurements. Methods for addressing imperfections in measured system matrices increasingly rely on deep neural networks, yet curated training data remain scarce. This study evaluates whether physics-based simulated system matrices can be used to train deep learning models for different system matrix restorati\u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "magnetic particle imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Tsanda",
+        "Reiss",
+        "Scheffler",
+        "Boberg"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "TSMPI-Net: a time-series generative adversarial network for short-frame-interval magnetic particle imaging.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41880760/",
+      "summary": "Objective.Magnetic particle imaging (MPI) is an emerging imaging modality that offers high sensitivity and the potential for high-speed imaging. In many MPI applications, the imaged object moves over time, requiring reconstruction of temporally coherent image sequences at short frame intervals. However, conventional MPI reconstruction methods, such as the system matrix method and X-space method, typically reconstruct frames in isolation and fail \u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "magnetic particle imaging",
+        "MPI reconstruction"
+      ],
+      "category": "paper",
+      "authors": [
+        "Gao",
+        "Zhang",
+        "Zhao",
+        "Tong"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Artificial Intelligence and Esthetics: Redefining Precision and Beauty in Plastic Surgery.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42075506/",
+      "summary": "Artificial intelligence (AI) is increasingly reshaping esthetic and reconstructive plastic surgery by improving measurement accuracy, treatment planning, and prediction of surgical outcomes. This article provides a scientific overview of current AI applications, including automated image analysis, machine-learning-based outcome forecasting, and generative models for preoperative simulation. AI-driven three-dimensional morphometrics allow precise,\u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "intraoperative AI"
+      ],
+      "category": "paper",
+      "authors": [
+        "Dumitrascu",
+        "Popa",
+        "Incze",
+        "Amarie"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Narrow Band Imaging Colon Polyp Study",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT00614770",
+      "summary": "In this study the investigators hypothesize that High Definition White Light colonoscopy and narrow band imaging (NBI) will detect a higher number of adenomas compared to standard definition white light colonoscopy. NBI will have a higher accuracy in predicting polyp histology compared to high definition colonoscopy and standard colonoscopy. Specific Aim 1 - To compare the prevalence of adenomas detected by standard colonoscopy, high-definition w\u2026",
+      "date": "2008-02",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Thoracoscopic Localization of Pulmonary Nodules Using Direct Intracavitary Thoracoscopic Ultrasound",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT01201824",
+      "summary": "Pulmonary nodules are one of the most common thoracic radiographic abnormalities. They are usually found accidentally as discrete well emarginated pulmonary lesions found within the lung parenchyma during a routine chest x-ray. Pulmonary nodules are usually asymptomatic. Most solitary lung nodules are benign; however these nodules can represent early stage lung cancer. The identification of malignant pulmonary nodules is important because they re\u2026",
+      "date": "2010-09",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Powered Echelon Device in VATS Surgery",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT01843192",
+      "summary": "This study aims to collect real world outcomes of Video-Assisted Thoracoscopic Surgery (VATS) for lung cancer (lobectomy, wedge resection) using ECHELON FLEX\u2122 Powered ENDOPATH\u00ae Staplers 45 mm and/or 60 mm (study devices).",
+      "date": "2013-05",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Efficacy Study Of Oral Glecaprevir/Pibrentasvir Tablet In Pediatric (12 Years and Older) And Adult Treatment-Naive Participants With Chronic Hepatitis C Genotypes 1 To 6 And Liver Cirrhosis",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT04352309",
+      "summary": "Hepatitis C Virus (HCV) infection is among the most common of all chronic liver diseases. HCV predominantly affects liver cells and causes the liver to become inflamed and damaged. This can lead to cirrhosis (scarring of the liver) and liver cancer leaving trial participants with need for liver transplant. The purpose of this study is to see how effective Glecaprevir/Pibrentasvir (GLE/PIB) is in a real world setting of participants with chronic H\u2026",
+      "date": "2020-05-29",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Fluorescence Molecular Endoscopy and Molecular Fluorescence-guided Surgery in Locally Advanced Rectal Cancer",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT04638036",
+      "summary": "Treatment of patients with locally advanced rectal cancer (LARC) is multidisciplinary and consists of neoadjuvant chemoradiotherapy (nCRT) followed by surgical removal of the rectal tumor and potentially tumor positive lymph nodes. 1. After surgery, in 15 to 27% of patients that received nCRT no tumor cells can be detected during histopathological examination. In today's clinical practice, all of these patients with a pathological complete respon\u2026",
+      "date": "2020-11-13",
+      "relevance_tags": [
+        "fluorescence-guided surgery"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Clinical Research on a Novel Deep-learning Based System in Mediastinal Endoscopic Ultrasound Scanning",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05792280",
+      "summary": "The goal of this clinical trial is to develop and verify the auxiliary role of the artificial intelligence system in mediastinal ultrasound endoscopic scanning. The main questions it aims to answer are as follows: 1.The comparison of the image recognition accuracy between the artificial intelligence system and the ultrasound endoscopist; 2. Whether the artificial intelligence system can improve the integrity and efficiency of the mediastinum scan\u2026",
+      "date": "2021-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Clinical Research on a Novel Deep-learning Based System in Pancreatic Endoscopic Ultrasound Scanning",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05792267",
+      "summary": "The goal of this clinical trial is to develop and verify the auxiliary role of the artificial intelligence system in pancreatic ultrasound endoscopic scanning.The main questions it aims to answer are as follows: 1.The comparison of the image recognition accuracy between the artificial intelligence system and the ultrasound endoscopist; 2. Whether the artificial intelligence system can improve the efficiency of the pancreatic scanning for the ultr\u2026",
+      "date": "2021-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "CT-based 3D Planning, Computer Navigation and Subsequent Migration Analysis in Total Hip Arthroplasty",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05159206",
+      "summary": "The aim of this study is to evaluate a new technique that optimizes the prosthesis position for patients who undergo total hip arthroplasty surgery. Today, most surgeons take a regular X-ray (2D) to plan the surgery. In this study, patients will do a computed tomography (CT) before surgery, and with the use of the new system, the investigators will be able to make a more accurate plan when it comes to prosthetic placement and leg length adjustmen\u2026",
+      "date": "2021-04-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Artificial Intelligence 3D Augmented Reality Robot-Assisted-Radical- Prostatectomy v.s. no3D Intervention",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06318559",
+      "summary": "This is a prospective randomized multicenter study aimed at comparing 3D AI-AR-RARP vs. no 3D, verifying the impact of this new technology on oncological and functional outcomes after the procedure.",
+      "date": "2022-06-29",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "The Development and Study of a 3D-Printed Model for Surgical Planning of Lung Cancer with Realistic Subsegmental Boundaries and Complete Tissue Structures",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06507774",
+      "summary": "This project focuses on the development of a precision multi-organ surgical planning model aided by artificial intelligence (AI), computer-aided design (CAD), multi-material 3D printing, and multimodal 3D modeling. The integration of these advanced technologies aims to enhance the accuracy and efficiency of preoperative planning for complex surgical procedures involving multiple organs. By leveraging AI and CAD, the project seeks to create detail\u2026",
+      "date": "2023-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Prediction of Occult Peritoneal Metastasis of Locally Advanced Gastric Cancer Using Multimodal Data Based on Artificial Intelligence Combined With Intraoperative Dynamic Video",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06478368",
+      "summary": "Brief Summary: Prediction of Occult Peritoneal Metastasis of Locally Advanced Gastric Cancer Using Multimodal Data Based on Artificial Intelligence Combined with Intraoperative Dynamic Video Gastric cancer, or stomach cancer, is a major health concern worldwide. For patients diagnosed with locally advanced gastric cancer (LAGC), one of the critical challenges is the detection of occult peritoneal metastasis. These metastases are cancerous cells t\u2026",
+      "date": "2024-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Artificial Intelligence Assisted Socket Shield With Computer Guided Implant Placement",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06299449",
+      "summary": "Aim of the current randomized clinical trial is to evaluate and compare the effectiveness of computer-guided immediate implant placement performed simultaneously with artificial intelligence assisted socket shield technique versus conventional approach.",
+      "date": "2024-03-05",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "IDEAL Study: Blinded RCT for the Impact of AI Model for Cerebral Aneurysms Detection on Patients' Diagnosis and Outcomes",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06118840",
+      "summary": "This study (IEDAL study) intends to prospectively enroll more than 6450 patients who will undergo head CT angiography (CTA) scanning in the outpatient clinic. It will be carried out in 21 hospitals in more than 10 provinces in China. The patient's head CTA images will be randomly assigned to the True-AI and Sham-AI group with a ratio of 1:1, and the patients and radiologists are unaware of the allocation. The primary outcomes are sensitivity and \u2026",
+      "date": "2024-05-20",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Exploratory Study on NIRFI Technology Combined with ICG Guided Cervical Cancer Lymph Node Metastasis",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06840418",
+      "summary": "The goal of this exploratory study is to exploring the lymph node metastasis, tumor margin, blood vessels, ureters, and nerve imaging in cervical cancer surgery using near-infrared fluorescence imaging technology combined with indocyanine green, and establishing an artificial intelligence model for predicting lymph node metastasis of cervical cancer to guide the advancement of refined surgical procedures.And the focus of this study is to investig\u2026",
+      "date": "2025-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Intraoperative Margin Assessment in Breast Cancer With HSI-Raman",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07111728",
+      "summary": "Breast-conserving surgery (lumpectomy) aims to remove cancer while preserving healthy tissue, but up to 20% of patients require a second operation because cancer cells remain at the edge (margin) of the removed tissue. The Spectra-BREAST study evaluates a new optical device that combines hyperspectral imaging (HIS) and Raman spectroscopy (RS) with artificial-intelligence analysis to quickly assess the entire surface of excised breast specimens du\u2026",
+      "date": "2025-10-06",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Supervised Endoscopic Tele-controlled Intelligent Lithotripsy",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07411391",
+      "summary": "This is a phase I feasibility study to investigate the use of a novel intelligent robotic retrograde intrarenal surgery (RIRS) platform. The TaloStone T1000 RIRS system can manipulate the flexible ureteroscope, with remote control of the instruments (laser fibre or basket) and ureteral access sheath movements. Beyond teleoperation, the TaloStone T1000 RIRS system integrates AI perception models and decision-making algorithms to enable the supervi\u2026",
+      "date": "2026-02-15",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Efficacy and Safety Comparison of Short-course Radiotherapy Followed by CapeOX Chemotherapy Plus Toripalimab With or Without Concurrent Surufatinib in Neoadjuvant Therapy for Mid-to-low Localized Rectal Cancer of High-risk Criteria",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07505472",
+      "summary": "Why is this study conducted? The purpose of this study is to improve the treatment efficacy, particularly the pathological complete response rate, in patients with high-risk/extremely high-risk locally advanced rectal cancer (LARC). In recent years, with the combination of neoadjuvant chemoradiotherapy and immunotherapy, some progress has been made in the treatment of rectal cancer, but there are still problems of regional recurrence and distant \u2026",
+      "date": "2026-02-23",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Hypotension Prediction Index (HPI) and Assisted Fluid Management (AFM) for Perioperative Hemodynamic Optimization in Patients Under General Anesthesia",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07301307",
+      "summary": "This study investigates if the Hypotension Prediction Index (HPI) combined with the Assisted Fluid Management (AFM) software can improve perioperative hemodynamic management in adult patients undergoing general anesthesia. The main question is : Does the HPI and AFM software reduce the incidence and duration of intraoperative hypotension? Does the HPI and AFM software optimize fluid and vasopressor administration? Does the HPI and AFM software im\u2026",
+      "date": "2026-03-15",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    }
+  ]
+}
