@@ -1,0 +1,293 @@
+{
+  "generated": "2026-05-20",
+  "total": 21,
+  "articles": [
+    {
+      "title": "Deep learning for restoring MPI system matrices using simulated training data.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41985509/",
+      "summary": "Objective.Magnetic particle imaging reconstructs tracer distributions using a system matrix (SM) obtained through time-consuming, noise-prone calibration measurements. Methods for addressing imperfections in measured system matrices increasingly rely on deep neural networks, yet curated training data remain scarce. This study evaluates whether physics-based simulated system matrices can be used to train deep learning (DL) models for different SM \u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "magnetic particle imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Tsanda",
+        "Reiss",
+        "Scheffler",
+        "Boberg"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Artificial Intelligence and Esthetics: Redefining Precision and Beauty in Plastic Surgery.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42075506/",
+      "summary": "Artificial intelligence (AI) is increasingly reshaping esthetic and reconstructive plastic surgery by improving measurement accuracy, treatment planning, and prediction of surgical outcomes. This article provides a scientific overview of current AI applications, including automated image analysis, machine-learning-based outcome forecasting, and generative models for preoperative simulation. AI-driven three-dimensional morphometrics allow precise,\u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "intraoperative AI"
+      ],
+      "category": "paper",
+      "authors": [
+        "Dumitrascu",
+        "Popa",
+        "Incze",
+        "Amarie"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "IMAU-Net: A Hybrid Multi-Scale Deep Learning Framework for Liver Segmentation from Laparoscopic Images.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42122417/",
+      "summary": "Accurate liver segmentation in laparoscopic surgery is critical but remains challenging due to low contrast, occlusion, and irregular organ boundaries. While deep learning has advanced medical image segmentation, existing models often trade off between accuracy, computational efficiency, and boundary precision. We propose IMAU-Net, a hybrid architecture integrating a pre-trained InceptionV3 encoder with a novel bottleneck combining Multi-Core Poo\u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "medical image segmentation"
+      ],
+      "category": "paper",
+      "authors": [
+        "Waseem",
+        "Shaikh",
+        "Hassan"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Optical Spectroscopy in Evaluating Tumor Margins in Patients Who Have Undergone Surgery for Breast Tumors",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT00625417",
+      "summary": "RATIONALE: Diagnostic procedures, such as optical spectroscopy, may help learn the extent of disease and allow doctors to plan better treatment. PURPOSE: This phase I trial is studying optical spectroscopy to see how well it works in evaluating tumor margins in patients who have undergone surgery for breast cancer.",
+      "date": "2006-08",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Early Detection of Tumors of the Digestive Tract by Confocal Endomicroscopy",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT02284802",
+      "summary": "Confocal endomicroscopy is an emerging technique that allows in vivo imaging of cells and tissue structures of the gastrointestinal mucosa, with a magnification of about 1000 times, guiding optical biopsies in real time. Confocal endomicroscopy represents technique that combines conventional white light image with the confocal microscope probe, thereby allowing examination of the surface epithelium in vivo and histological diagnosis during endosc\u2026",
+      "date": "2014-09-10",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Feasibility Analysis of LCD-SLA 3D Printing Technology for Overall Surgical Planning of Liver Malignant Tumors",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06526754",
+      "summary": "This study aims to evaluate the effectiveness of 3D-printed liver models in hepatobiliary surgery planning compared to traditional digital simulations. It is conducted in three phases: 1. Development and validation of 35 3D-printed liver models, focusing on timeliness, cost, precision, and alignment with digital planning tools. 2. Optimization of the 3D reconstruction process using deep learning to enhance model accuracy and efficiency. 3. A retr\u2026",
+      "date": "2019-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Prostate Biopsy, Transrectal vs. Transperineal: Efficacy and Complications",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT04081636",
+      "summary": "This study evaluates the difference between 2 prostate biopsy methods, transrectal (through the rectal wall) and transperineal (through the skin) needle biopsy. Men who are in need of prostate biopsy due to clinical suspicions of prostate cancer will be randomly assigned (1:1) to either transrectal or transperineal approach. This research study will scientifically determine if one biopsy method is better than the other in reducing complications a\u2026",
+      "date": "2019-09-02",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "CT-based 3D Planning, Computer Navigation and Subsequent Migration Analysis in Total Hip Arthroplasty",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05159206",
+      "summary": "The aim of this study is to evaluate a new technique that optimizes the prosthesis position for patients who undergo total hip arthroplasty surgery. Today, most surgeons take a regular X-ray (2D) to plan the surgery. In this study, patients will do a computed tomography (CT) before surgery, and with the use of the new system, the investigators will be able to make a more accurate plan when it comes to prosthetic placement and leg length adjustmen\u2026",
+      "date": "2021-04-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "A Prospective Multicenter Clinical Study of SCCG Protocol and ctDNA 5hmc in Predicting the Chemotherapy Sensitivity and Monitoring the Recurrence and Metastasis of Hepatoblastoma in Children and Adolescents",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07300449",
+      "summary": "Hepatoblastoma is the most common malignant liver tumor in infants and preschool children, comprising 65% of pediatric liver malignancies in those under 15, with its incidence on the rise in recent years \\[1\\]. Standard therapy combines surgical resection and chemotherapy: early-stage patients boast a survival rate over 90%, yet high-risk cases only reach around 40%, highlighting unmet treatment needs. Notably, there is no universal definition fo\u2026",
+      "date": "2021-06-23",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Usage Of Artificial Intelligence-Integrated Usg In Application of Pectoral Block In Mastectomies",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06480045",
+      "summary": "The investigator's goal in this study is to apply PECS II block, before starting surgery, by either conventional USG or artificial intelligence integrated USG to patients who will undergo mastectomy under general anesthesia to determine the effect of the block on hemodynamics and opioid consumption in the intraoperative period. Besides, the investigatorwanted to investigate the contribution of artificial intelligence integrated USG use in the suc\u2026",
+      "date": "2021-11-05",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Intraoperative Rapid Diagnosis of Glioma Based on Fusion of Magnetic Resonance and Ultrasound Imaging",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05656053",
+      "summary": "The aim of this observational study is to enable rapid diagnosis of molecular biomarkers in patients during surgery by medical imaging and artificial intelligence models, to help clinicians with strategies to maximize safe resection of gliomas. The main questions it aims to answer are: 1. To solve the current clinical shortcomings of intraoperative molecular diagnosis, which is time-consuming and complex, and enables rapid and automated molecular\u2026",
+      "date": "2021-11-15",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "The Development and Study of a 3D-Printed Model for Surgical Planning of Lung Cancer with Realistic Subsegmental Boundaries and Complete Tissue Structures",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06507774",
+      "summary": "This project focuses on the development of a precision multi-organ surgical planning model aided by artificial intelligence (AI), computer-aided design (CAD), multi-material 3D printing, and multimodal 3D modeling. The integration of these advanced technologies aims to enhance the accuracy and efficiency of preoperative planning for complex surgical procedures involving multiple organs. By leveraging AI and CAD, the project seeks to create detail\u2026",
+      "date": "2023-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Prediction of Occult Peritoneal Metastasis of Locally Advanced Gastric Cancer Using Multimodal Data Based on Artificial Intelligence Combined With Intraoperative Dynamic Video",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06478368",
+      "summary": "Brief Summary: Prediction of Occult Peritoneal Metastasis of Locally Advanced Gastric Cancer Using Multimodal Data Based on Artificial Intelligence Combined with Intraoperative Dynamic Video Gastric cancer, or stomach cancer, is a major health concern worldwide. For patients diagnosed with locally advanced gastric cancer (LAGC), one of the critical challenges is the detection of occult peritoneal metastasis. These metastases are cancerous cells t\u2026",
+      "date": "2024-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "IDEAL Study: Blinded RCT for the Impact of AI Model for Cerebral Aneurysms Detection on Patients' Diagnosis and Outcomes",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06118840",
+      "summary": "This study (IEDAL study) intends to prospectively enroll more than 6450 patients who will undergo head CT angiography (CTA) scanning in the outpatient clinic. It will be carried out in 21 hospitals in more than 10 provinces in China. The patient's head CTA images will be randomly assigned to the True-AI and Sham-AI group with a ratio of 1:1, and the patients and radiologists are unaware of the allocation. The primary outcomes are sensitivity and \u2026",
+      "date": "2024-05-20",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Functional Innovation and Application Research of Domestic Advanced Low-Dose DSA/CT-DSA",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06762613",
+      "summary": "The goal of this clinical trial is to learn if Generative AI Based Puncture Surgery Navigation System (GPS) can guide lung puncture in adults better. It will also learn about the quality improvement of cone beam CT (CBCT) by GPS. The main questions it aims to answer are: * Does GPS lower the number of punctures, radiation dose, and complications of participants undergo percutaneous lung puncture? * Does GPS improve the quality of CBCT images? Res\u2026",
+      "date": "2025-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Exploratory Study on NIRFI Technology Combined with ICG Guided Cervical Cancer Lymph Node Metastasis",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06840418",
+      "summary": "The goal of this exploratory study is to exploring the lymph node metastasis, tumor margin, blood vessels, ureters, and nerve imaging in cervical cancer surgery using near-infrared fluorescence imaging technology combined with indocyanine green, and establishing an artificial intelligence model for predicting lymph node metastasis of cervical cancer to guide the advancement of refined surgical procedures.And the focus of this study is to investig\u2026",
+      "date": "2025-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Using 3D Kidney Model Based on Artificial Intelligence to Assist Partial Nephrectomy: A Prospective Validation Study",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07020169",
+      "summary": "The goal of this study is to develop a real-time artificial intelligence-driven 3D kidney model to assist robotic or laparoscopic partial nephrectomy: \u2022 Can this AI-powered model optimize the workflow of partial nephrectomy and enhance surgical benefits?",
+      "date": "2025-05-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "ABCSG 61 / TEODOR : Neoadjuvant TrEatment Optimization Driven by Circulating Tumor DNA and endOcrine Responsiveness",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07084558",
+      "summary": "The goal of this performance study is to learn if treatment with neoadjuvant endocrine therapy compared to chemotherapy has comparable efficacy, but better quality of life outcomes in endocrine responsive participants with early and locally advanced ER+/HER2-negative breast cancer and no detectable ctDNA in peripheral blood. The main question it aims to answer is: Is neoadjuvant endocrine therapy at least equivalent to neoadjuvant chemotherapy fo\u2026",
+      "date": "2025-08-13",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "AI-Driven Dynamic Prediction of Non-Target Lesion Progression After PCI: A Chinese Multicenter Cohort Study",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07312318",
+      "summary": "Coronary artery disease remains a leading cause of global mortality. Although percutaneous coronary intervention (PCI) improves patient outcomes, the long-term risk of major adverse cardiovascular events (MACE) driven by the progression of non-target lesions (NTLs) remains substantial and continues to increase, while current risk stratification tools remain inadequate for predicting NTL progression. This multicenter cohort study aims to develop a\u2026",
+      "date": "2025-09-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Intraoperative Margin Assessment in Breast Cancer With HSI-Raman",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07111728",
+      "summary": "Breast-conserving surgery (lumpectomy) aims to remove cancer while preserving healthy tissue, but up to 20% of patients require a second operation because cancer cells remain at the edge (margin) of the removed tissue. The Spectra-BREAST study evaluates a new optical device that combines hyperspectral imaging (HIS) and Raman spectroscopy (RS) with artificial-intelligence analysis to quickly assess the entire surface of excised breast specimens du\u2026",
+      "date": "2025-10-06",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Supervised Endoscopic Tele-controlled Intelligent Lithotripsy",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07411391",
+      "summary": "This is a phase I feasibility study to investigate the use of a novel intelligent robotic retrograde intrarenal surgery (RIRS) platform. The TaloStone T1000 RIRS system can manipulate the flexible ureteroscope, with remote control of the instruments (laser fibre or basket) and ureteral access sheath movements. Beyond teleoperation, the TaloStone T1000 RIRS system integrates AI perception models and decision-making algorithms to enable the supervi\u2026",
+      "date": "2026-02-15",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    }
+  ]
+}
