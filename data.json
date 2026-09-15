@@ -1,0 +1,420 @@
+{
+  "generated": "2026-09-15",
+  "total": 28,
+  "articles": [
+    {
+      "title": "A novel software framework for magnetic particle imaging reconstruction",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/1ae3367fb0c515081ec736d4f96e23f08634e58b",
+      "summary": "Magnetic particle imaging is a novel tomographic imaging technique that enables noninvasive and highly sensitive imaging of superparamagnetic iron oxide nanoparticles distributed in living subjects. Several studies have reported on the development of reconstruction algorithms; however, a unified software framework for magnetic particle imaging reconstruction has yet to be developed. Herein, we propose a high\u2010performance, flexible, and easy\u2010to\u2010use\u2026",
+      "date": "2022",
+      "relevance_tags": [
+        "magnetic particle imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Yusong Shen",
+        "Chaoen Hu",
+        "Peng Zhang",
+        "Jie Tian"
+      ],
+      "citations": 31
+    },
+    {
+      "title": "Accurate Concentration Recovery for Quantitative Magnetic Particle Imaging Reconstruction via Nonconvex Regularization",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/5db10ac7d249d675c5382ea7ca90bec53cb13fc2",
+      "summary": "Magnetic particle imaging (MPI) uses nonlinear response signals to noninvasively detect magnetic nanoparticles in space, and its quantitative properties hold promise for future precise quantitative treatments. In reconstruction, the system matrix based method necessitates suitable regularization terms, such as Tikhonov or non-negative fused lasso (NFL) regularization, to stabilize the solution. While NFL regularization offers clearer edge informa\u2026",
+      "date": "2024",
+      "relevance_tags": [
+        "magnetic particle imaging",
+        "MPI reconstruction"
+      ],
+      "category": "paper",
+      "authors": [
+        "Tao Zhu",
+        "Lin Yin",
+        "Jie He",
+        "Zechen Wei"
+      ],
+      "citations": 16
+    },
+    {
+      "title": "MPIGAN: An end-to-end deep based generative framework for high-resolution magnetic particle imaging reconstruction.",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/2d5f853b7bb71c7f7272da7fdce2ac69f056a3b3",
+      "summary": "BACKGROUND Magnetic particle imaging (MPI) is a recently developed, non-invasive in vivo imaging technique to map the spatial distribution of superparamagnetic iron oxide nanoparticles (SPIONs) in animal tissues with high sensitivity and speed. It is a challenge to reconstruct images directly from the received signals of MPI device due to the complex physical behavior of the nanoparticles. System matrix and X-space are two commonly used MPI recon\u2026",
+      "date": "2024",
+      "relevance_tags": [
+        "magnetic particle imaging",
+        "MPI reconstruction"
+      ],
+      "category": "paper",
+      "authors": [
+        "Jing Zhao",
+        "Yusong Shen",
+        "Xinyi Liu",
+        "Xiaoyuan Hou"
+      ],
+      "citations": 11
+    },
+    {
+      "title": "A fused LASSO operator for fast 3D magnetic particle imaging reconstruction",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/3102338032f27d2f0c00a24871979be2e056b13c",
+      "summary": "Objective. Magnetic particle imaging (MPI) is a promising imaging modality that leverages the nonlinear magnetization behavior of superparamagnetic iron oxide nanoparticles to determine their concentration distribution. Previous optimization models with multiple regularization terms have been proposed to achieve high-quality MPI reconstruction, but these models often result in increased computational burden, particularly for dense gridding 3D fie\u2026",
+      "date": "2024",
+      "relevance_tags": [
+        "magnetic particle imaging",
+        "MPI reconstruction"
+      ],
+      "category": "paper",
+      "authors": [
+        "Jie He",
+        "Yimeng Li",
+        "Peng Zhang",
+        "Hui Hui"
+      ],
+      "citations": 4
+    },
+    {
+      "title": "Multi\u2010task generative model for high\u2010quality magnetic particle imaging reconstruction",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/96fee5abcd2e8d154b868a1330c923aa7b4faccc",
+      "summary": "",
+      "date": "2025",
+      "relevance_tags": [
+        "magnetic particle imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Jing Zhao",
+        "Hao-Ran Zhang",
+        "Xinyi Liu",
+        "Jie Tian"
+      ],
+      "citations": 3
+    },
+    {
+      "title": "Adaptive and Robust Frequency Selection Framework in Calibration-Based Magnetic Particle Imaging Reconstruction",
+      "source": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/paper/020d704bcff54c3f63e202ef8b4f937727cb2182",
+      "summary": "Objective: Frequency selection is a crucial step for calibration-based magnetic particle imaging (MPI) reconstruction, enabling improvement in computational efficiency and noise suppression. Current methods combine signal-to-noise ratio (SNR) feature with a selection threshold. However, the selection threshold determination is experience-dependent, and the utilization of the system matrix (SM) and the imaging phantom signal is insufficient. Metho\u2026",
+      "date": "2025",
+      "relevance_tags": [
+        "magnetic particle imaging",
+        "MPI reconstruction"
+      ],
+      "category": "paper",
+      "authors": [
+        "Tao Zhu",
+        "Hao-Ran Zhang",
+        "Zechen Wei",
+        "Xin Yang"
+      ],
+      "citations": 2
+    },
+    {
+      "title": "MPISuperRes-PnP: a super-resolution zero-shot plug-and-play reconstruction algorithm for magnetic particle imaging.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42716112/",
+      "summary": "Magnetic Particle Imaging (MPI) is a promising, emerging medical imaging modality. MPI is based on the non-linear response of magnetic nanoparticles to an applied magnetic field and does not expose the specimen to ionizing radiation. The measured signal is the voltage induced in receive coils by the particles' response. Reconstructing the particle concentration from the signal constitutes the imaging task. Even using state-of-the-art measurement-\u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "magnetic particle imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Gapyak",
+        "M\u00e4rz",
+        "Weinmann"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Image-Guided and Fluorescence-Guided Surgery in Pediatric Oncology: Current State of the Art.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42686237/",
+      "summary": "This article reviews the evolving role of image-guided surgery (IGS) and fluorescence-guided surgery (FGS) in pediatric solid tumor surgery. Owing to tumor biology, small anatomy, and the need for organ preservation, pediatric surgical oncology demands exceptional precision. IGS enhances spatial orientation through 3-dimensional modeling, navigation, and augmented reality, while FGS provides real-time functional and molecular visualization of tum\u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "fluorescence-guided surgery"
+      ],
+      "category": "paper",
+      "authors": [
+        "van der Steeg",
+        "Malek",
+        "Fusco"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "[Advances and Challenges in Photoacoustic-Ultrasound Dual-Modality Imaging: from Hardware Innovations to Clinical Applications].",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42675837/",
+      "summary": "Photoacoustic-ultrasound dual-modal imaging represents an emerging hybrid imaging technique that combines the functional advantages of photoacoustic imaging with the high-resolution structural characterization capabilities of ultrasound imaging. This article comprehensively summarizes the research status and progress from both system-level and algorithmic perspectives. In hardware development, breakthroughs in novel ultrasound transducers and mul\u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "photoacoustic imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Sheng",
+        "Sun"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Integrating kidney imaging for risk prediction, therapeutic monitoring, and prognostication across the kidney disease spectrum: a review of emerging evidence.",
+      "source": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42633028/",
+      "summary": "Kidney imaging advances are transforming the field of nephrology by allowing non-invasive examination of renal structure, function, and pathology. Traditional measures such as albuminuria and estimated glomerular filtration rate (eGFR) are only partially effective in identifying early or regionally variable kidney damage. As an example, imaging identifies chronic kidney disease (CKD) in autosomal dominant polycystic kidney disease (ADPKD) decades\u2026",
+      "date": "2026",
+      "relevance_tags": [
+        "photoacoustic imaging"
+      ],
+      "category": "paper",
+      "authors": [
+        "Guldan",
+        "Gulmaliyev",
+        "AlShiab",
+        "Shah"
+      ],
+      "citations": 0
+    },
+    {
+      "title": "Clofarabine and Low-Dose Total-Body Irradiation in Treating Patients With Acute Myeloid Leukemia Undergoing Donor Peripheral Blood Stem Cell Transplant",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT01252667",
+      "summary": "This phase II trial studies the side effects and how well clofarabine works when given together with low-dose total-body irradiation (TBI) in treating patients with acute myeloid leukemia (AML) undergoing donor peripheral blood stem cell transplant (PBSCT). Giving chemotherapy and TBI before a donor PBSCT helps stop the growth of cancer cells. It may also stop the patient's immune system from rejecting the donor's stem cells. When the healthy ste\u2026",
+      "date": "2011-01-25",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Potential Use of Indocyanine Green as a Fluorescent Agent for Definition of Surgical Margins in Cancer",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT01884584",
+      "summary": "The surgeon may remove a very small amount of additional tissue compared to what would be removed if you were not enrolled in the study. This tissue may prove to contain tumor or it may contain normal tissue. The surgical cavity will be examined by a special laser pen after the tumor is removed, and if areas of fluorescence are seen, that may indicate tumor cells where the ICG dye collected are still remaining and the surgeon would then remove th\u2026",
+      "date": "2012-06",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Study in Patients With Peritoneal Carcinomatosis From CEA Overexpressing Digestive Cancer",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT02784028",
+      "summary": "The digestive cancer is the second cause of death worldwide. The presence of peritoneal carcinomatosis is common in the evolution of this type of cancer, as well as increased levels of ACE. This peritoneal carcinomatosis is often underestimated, this being due to low sensitivity detection means. In recent years, it has been shown that peritoneal carcinomatosis surgery as complete as possible associated with an intraperitoneal chemotherapy gave be\u2026",
+      "date": "2014-12",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Evaluation of Multiple Protein and Molecular Biomarkers to Estimate Risk of Cancer in Gynecology Patients Presenting With a Pelvic Mass.",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT02781272",
+      "summary": "ANGLE has developed the Parsortix\u2122 Cell Separation System (Parsortix), an automated system capable of harvesting rare circulating cells for analysis from a sample of peripheral blood based on cellular size and deformability. In a small pilot study, scientists at the Medical University of Vienna demonstrated that measurement of a combination of mRNA markers extracted from CTCs captured using the Parsortix system could be used to identify women wit\u2026",
+      "date": "2016-06-30",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Feasibility Analysis of LCD-SLA 3D Printing Technology for Overall Surgical Planning of Liver Malignant Tumors",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06526754",
+      "summary": "This study aims to evaluate the effectiveness of 3D-printed liver models in hepatobiliary surgery planning compared to traditional digital simulations. It is conducted in three phases: 1. Development and validation of 35 3D-printed liver models, focusing on timeliness, cost, precision, and alignment with digital planning tools. 2. Optimization of the 3D reconstruction process using deep learning to enhance model accuracy and efficiency. 3. A retr\u2026",
+      "date": "2019-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Clinical Research on a Novel Deep-learning Based System in Mediastinal Endoscopic Ultrasound Scanning",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05792280",
+      "summary": "The goal of this clinical trial is to develop and verify the auxiliary role of the artificial intelligence system in mediastinal ultrasound endoscopic scanning. The main questions it aims to answer are as follows: 1.The comparison of the image recognition accuracy between the artificial intelligence system and the ultrasound endoscopist; 2. Whether the artificial intelligence system can improve the integrity and efficiency of the mediastinum scan\u2026",
+      "date": "2021-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "CT-based 3D Planning, Computer Navigation and Subsequent Migration Analysis in Total Hip Arthroplasty",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05159206",
+      "summary": "The aim of this study is to evaluate a new technique that optimizes the prosthesis position for patients who undergo total hip arthroplasty surgery. Today, most surgeons take a regular X-ray (2D) to plan the surgery. In this study, patients will do a computed tomography (CT) before surgery, and with the use of the new system, the investigators will be able to make a more accurate plan when it comes to prosthetic placement and leg length adjustmen\u2026",
+      "date": "2021-04-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "ENDO-AID Assisted Tandem Colonoscopy RCT",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT05013125",
+      "summary": "This study hypothesizes that more adenomas will be detected using the ENDO-AID assisted Colonoscopy compared to conventional colonoscopy. A single-centre, randomized, same-day, back-to-back tandem colonoscopy trial comparing Adenoma Missed Rate and Adenoma Detection Rate in ENDO-AID assisted colonoscopy and conventional colonoscopy.",
+      "date": "2021-08-18",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Predicting Outcome of Cytoreduction in Advanced Ovarian Cancer",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06017557",
+      "summary": "PREDAtOOR is a pilot study and this study aims at improving the selection of the best treatment strategy for patients with advanced ovarian cancer by using Camera Vision (CV) to predict outcomes of cyto reduction at the time of Diagnostic laparoscopy.",
+      "date": "2023-01-02",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Role of Computer-Aided Detection Colonoscopy in Polyp Detection Rate",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07171333",
+      "summary": "High-definition (HD) colonoscopy is the gold standard for early diagnosis and treatment of lower gastrointestinal neoplasms, with the adenoma detection rate (ADR) serving as a key quality indicator due to its inverse correlation with colorectal cancer incidence. ADR is influenced by operator expertise, fatigue, and human error, which may be mitigated by advanced imaging technologies such as computer-aided detection (CADe). CADe systems provide re\u2026",
+      "date": "2023-08-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Artificial Intelligence Assisted Socket Shield With Computer Guided Implant Placement",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06299449",
+      "summary": "Aim of the current randomized clinical trial is to evaluate and compare the effectiveness of computer-guided immediate implant placement performed simultaneously with artificial intelligence assisted socket shield technique versus conventional approach.",
+      "date": "2024-03-05",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "IDEAL Study: Blinded RCT for the Impact of AI Model for Cerebral Aneurysms Detection on Patients' Diagnosis and Outcomes",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06118840",
+      "summary": "This study (IEDAL study) intends to prospectively enroll more than 6450 patients who will undergo head CT angiography (CTA) scanning in the outpatient clinic. It will be carried out in 21 hospitals in more than 10 provinces in China. The patient's head CTA images will be randomly assigned to the True-AI and Sham-AI group with a ratio of 1:1, and the patients and radiologists are unaware of the allocation. The primary outcomes are sensitivity and \u2026",
+      "date": "2024-05-20",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Image-Guided Surgery In The Treatment Of Rectal Cancer (AR_CRC)",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06805045",
+      "summary": "The proposed study is addressed to introduce new Image-Guided Surgery (IGS) tools to assist mini-invasive surgical procedures of anterior rectal resection (TME; TA-TME, TTSS) performed with laparoscopic or robotic procedure. In details, the idea is to provide augmented reality (AR) guidance during robotic-assisted and laparoscopic surgeries, by overlaying the preoperative 3D virtual anatomical models to intraoperative surgical images (3D AR guida\u2026",
+      "date": "2024-05-29",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Exploratory Study on NIRFI Technology Combined with ICG Guided Cervical Cancer Lymph Node Metastasis",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT06840418",
+      "summary": "The goal of this exploratory study is to exploring the lymph node metastasis, tumor margin, blood vessels, ureters, and nerve imaging in cervical cancer surgery using near-infrared fluorescence imaging technology combined with indocyanine green, and establishing an artificial intelligence model for predicting lymph node metastasis of cervical cancer to guide the advancement of refined surgical procedures.And the focus of this study is to investig\u2026",
+      "date": "2025-01-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Using 3D Kidney Model Based on Artificial Intelligence to Assist Partial Nephrectomy: A Prospective Validation Study",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07020169",
+      "summary": "The goal of this study is to develop a real-time artificial intelligence-driven 3D kidney model to assist robotic or laparoscopic partial nephrectomy: \u2022 Can this AI-powered model optimize the workflow of partial nephrectomy and enhance surgical benefits?",
+      "date": "2025-05-01",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "RAINBOW-ICH Trial of AI Guided Minimally Invasive Neurosurgery for ICH",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07205263",
+      "summary": "Intracerebral hemorrhage (ICH) is one of the most devastating forms of stroke, with high rates of death and disability worldwide. Despite advances in medical and surgical care, effective therapeutic options remain limited. To address this gap, the RAINBOW-ICH trial has been designed as a nationwide, multicenter, randomized umbrella trial evaluating the efficacy and safety of AI-assisted, robotic-guided minimally invasive neurosurgery compared wit\u2026",
+      "date": "2025-09-30",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Hypotension Prediction Index (HPI) and Assisted Fluid Management (AFM) for Perioperative Hemodynamic Optimization in Patients Under General Anesthesia",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07301307",
+      "summary": "This study investigates if the Hypotension Prediction Index (HPI) combined with the Assisted Fluid Management (AFM) software can improve perioperative hemodynamic management in adult patients undergoing general anesthesia. The main question is : Does the HPI and AFM software reduce the incidence and duration of intraoperative hypotension? Does the HPI and AFM software optimize fluid and vasopressor administration? Does the HPI and AFM software im\u2026",
+      "date": "2026-03-15",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    },
+    {
+      "title": "Label-free Femtosecond Laser Imaging Combined With the Fast Lung Artificial Intelligence Model for Rapid Intraoperative Diagnosis of Lung Surgical Specimens: A Multicentre, Prospective, Parallel-workflow, Non-inferiority Study.",
+      "source": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/study/NCT07681245",
+      "summary": "This study aims to evaluate whether femtosecond laser imaging combined with FastLung AI model can provide intraoperative diagnostic performance that is non-inferior to standard frozen section diagnosis for pulmonary nodules or suspected pulmonary tumor lesions. Patients scheduled for lung surgery and requiring intraoperative pathological assessment will be prospectively enrolled. After tumor excision, the fresh tumor specimen will be bisected thr\u2026",
+      "date": "2026-07-03",
+      "relevance_tags": [
+        "surgical AI"
+      ],
+      "category": "trial",
+      "authors": [],
+      "citations": 0
+    }
+  ]
+}
