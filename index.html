@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BME Digest — 2026-10-10</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08080f; --s1:#0f0f1a; --s2:#16162a;
+    --b1:rgba(255,255,255,0.06); --b2:rgba(255,255,255,0.11);
+    --t1:#ddd9f5; --t2:#8883a8; --t3:#4e4b68;
+    --p:#7c6cfc; --g:#4fc3a1; --o:#f0874a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--t1);font-family:"IBM Plex Sans",sans-serif;
+       font-weight:300;min-height:100vh;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  /* LAYOUT */
+  .shell{display:grid;grid-template-columns:1fr 260px;gap:0;max-width:1200px;
+          margin:0 auto;padding:0 24px 80px;align-items:start}
+  .main{padding:0 32px 0 0;border-right:1px solid var(--b1)}
+  .sidebar{padding:32px 0 0 28px;position:sticky;top:24px}
+  /* HEADER */
+  .header{padding:48px 0 36px}
+  .header-kicker{font-family:"IBM Plex Mono",monospace;font-size:10px;
+                  letter-spacing:0.14em;color:var(--p);text-transform:uppercase;
+                  margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .header-kicker::before{content:"";width:18px;height:1px;background:var(--p)}
+  h1{font-family:"Syne",sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;
+      letter-spacing:-0.025em;line-height:1.05;margin-bottom:8px}
+  h1 em{color:var(--p);font-style:normal}
+  .header-sub{font-size:13px;color:var(--t2)}
+  /* STAT ROW */
+  .stats{display:flex;gap:20px;margin:24px 0 8px;flex-wrap:wrap}
+  .stat{background:var(--s1);border:1px solid var(--b1);border-radius:10px;
+         padding:12px 16px;min-width:100px}
+  .stat-num{font-family:"Syne",sans-serif;font-size:22px;font-weight:800;
+             line-height:1}
+  .stat-label{font-size:11px;color:var(--t2);margin-top:3px}
+  /* SECTIONS */
+  .section{margin-bottom:36px}
+  .section-header{display:flex;align-items:center;gap:8px;margin-bottom:16px;
+                   font-family:"IBM Plex Mono",monospace;font-size:11px;
+                   letter-spacing:0.1em;text-transform:uppercase}
+  .section-count{background:var(--s2);padding:2px 7px;border-radius:10px;
+                  font-size:10px;color:var(--t2)}
+  .section-line{flex:1;height:1px;background:var(--b1)}
+  /* CARDS */
+  .card{background:var(--s1);border:1px solid var(--b1);border-radius:12px;
+         padding:14px 16px;margin-bottom:10px;
+         transition:border-color 0.15s,background 0.15s}
+  .card:hover{border-color:var(--b2);background:var(--s2)}
+  .card-title{font-family:"Syne",sans-serif;font-size:14px;font-weight:700;
+               color:var(--t1);display:block;margin-bottom:6px;line-height:1.35}
+  .card-title:hover{color:var(--p)}
+  .card-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+              margin-bottom:6px;font-size:11px;font-family:"IBM Plex Mono",monospace}
+  .source-pill{background:var(--s2);border:1px solid var(--b1);padding:1px 7px;
+                border-radius:4px;font-size:10px;color:var(--t2)}
+  .card-summary{font-size:12px;color:var(--t2);line-height:1.65;
+                 display:-webkit-box;-webkit-line-clamp:3;
+                 -webkit-box-orient:vertical;overflow:hidden}
+  /* SIDEBAR */
+  .sidebar-block{margin-bottom:28px}
+  .sidebar-title{font-family:"IBM Plex Mono",monospace;font-size:10px;
+                  letter-spacing:0.12em;text-transform:uppercase;color:var(--t3);
+                  margin-bottom:12px}
+  .kw-row{display:flex;justify-content:space-between;align-items:center;
+           padding:5px 0;border-bottom:1px solid var(--b1)}
+  .kw-label{font-size:12px;color:var(--t2)}
+  .kw-num{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--p)}
+  .refresh-note{font-size:11px;color:var(--t3);line-height:1.6;margin-top:8px}
+  /* FILTER BAR */
+  .filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .filter-btn{background:var(--s1);border:1px solid var(--b1);border-radius:6px;
+               padding:5px 12px;font-size:12px;color:var(--t2);cursor:pointer;
+               font-family:"IBM Plex Sans",sans-serif;transition:all 0.15s}
+  .filter-btn:hover,.filter-btn.active{background:var(--p);border-color:var(--p);
+                                        color:#fff}
+  /* SEARCH */
+  .search-wrap{margin-bottom:20px}
+  #search{width:100%;background:var(--s1);border:1px solid var(--b1);
+           border-radius:8px;padding:9px 14px;color:var(--t1);font-size:13px;
+           font-family:"IBM Plex Sans",sans-serif;outline:none;
+           transition:border-color 0.15s}
+  #search:focus{border-color:var(--p)}
+  #search::placeholder{color:var(--t3)}
+  /* RESPONSIVE */
+  @media(max-width:800px){
+    .shell{grid-template-columns:1fr;padding:0 16px 60px}
+    .main{padding:0;border-right:none}
+    .sidebar{padding:0;border-top:1px solid var(--b1);margin-top:32px;
+              position:static}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+<main class="main">
+  <div class="header">
+    <div class="header-kicker">Lampe Joint BME · UNC Chapel Hill</div>
+    <h1>Bioimaging<br><em>Daily Digest</em></h1>
+    <p class="header-sub">Auto-generated · October 10, 2026 at 12:05 UTC</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num" style="color:var(--p)">10</div>
+        <div class="stat-label">Papers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--g)">0</div>
+        <div class="stat-label">News</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--o)">18</div>
+        <div class="stat-label">Trials</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">28</div>
+        <div class="stat-label">Total</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-wrap">
+    <input id="search" type="text" placeholder="Filter by keyword, source, or tag…"
+           oninput="filterCards(this.value)">
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+    <button class="filter-btn" onclick="setFilter('paper',this)">Papers</button>
+    <button class="filter-btn" onclick="setFilter('news',this)">News</button>
+    <button class="filter-btn" onclick="setFilter('trial',this)">Trials</button>
+  </div>
+
+  <div id="content">
+    
+        <section class="section">
+          <div class="section-header">
+            <span style="color:#7c6cfc;margin-right:8px">◈</span>
+            <span style="color:#7c6cfc">New Papers</span>
+            <span class="section-count">10</span>
+            <span class="section-line"></span>
+          </div>
+          
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2409.16564v1" target="_blank"
+             rel="noopener noreferrer">Normalizing flow regularization for photoacoustic tomography</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2024-09-25</span>
+            <span style="color:#5a5878;font-size:11px">Chao Wang, Alexandre H. Thiery</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic tomography</span></div>
+          <p class="card-summary">Proper regularization is crucial in inverse problems to achieve high-quality reconstruction, even with an ill-conditioned measurement system. This is particularly true for three-dimensional photoacoustic tomography, which is computationally demanding and requires rapid scanning, often leading to incomplete measurements. Deep neural networks, known for their efficiency in handling big data, are anticipated to be adept at extracting underlying info…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2506.03175v1" target="_blank"
+             rel="noopener noreferrer">Super-temporal-resolution Photoacoustic Imaging with Dynamic Reconstruction through Implicit Neural Representation in Sparse-view</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2025-05-29</span>
+            <span style="color:#5a5878;font-size:11px">Youshen Xiao, Yiling Shi, Ruixi Sun…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic imaging</span></div>
+          <p class="card-summary">Dynamic Photoacoustic Computed Tomography (PACT) is an important imaging technique for monitoring physiological processes, capable of providing high-contrast images of optical absorption at much greater depths than traditional optical imaging methods. However, practical instrumentation and geometric constraints limit the number of acoustic sensors available around the imaging target, leading to sparsity in sensor data. Traditional photoacoustic (…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2507.15777v4" target="_blank"
+             rel="noopener noreferrer">Label tree semantic losses for rich multi-class medical image segmentation</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2025-07-21</span>
+            <span style="color:#5a5878;font-size:11px">Junwen Wang, Oscar MacCormac, William Rochford…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">medical image segmentation</span></div>
+          <p class="card-summary">Rich and accurate medical image segmentation is poised to underpin the next generation of AI-defined clinical practice by delineating critical anatomy for pre-operative planning, guiding real-time intra-operative navigation, and supporting precise post-operative assessment. However, commonly used learning methods for medical and surgical imaging segmentation tasks penalise all errors equivalently and thus fail to exploit any inter-class semantics…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2509.09894v2" target="_blank"
+             rel="noopener noreferrer">Physics-Aware Neural Operators for Direct Inversion in 3D Photoacoustic Tomography</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2025-09-11</span>
+            <span style="color:#5a5878;font-size:11px">Jiayun Wang, Yousuf Aborahama, Arya Khokhar…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic tomography</span></div>
+          <p class="card-summary">Learning physics-constrained inverse operators-rather than post-processing physics-based reconstructions-is a broadly applicable strategy for problems with expensive forward models. We demonstrate this principle in three-dimensional photoacoustic computed tomography (3D PACT), where current systems demand dense transducer arrays and prolonged scans, restricting clinical translation. We introduce PANO (PACT imaging neural operator), an end-to-end …</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2511.06580v1" target="_blank"
+             rel="noopener noreferrer">Compressive Sensing Photoacoustic Imaging Receiver with Matrix-Vector-Multiplication SAR ADC</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2025-11-09</span>
+            <span style="color:#5a5878;font-size:11px">Huan-Cheng Liao, Shunyao Zhang, Yumin Su…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic imaging</span></div>
+          <p class="card-summary">Wearable photoacoustic imaging devices hold great promise for continuous health monitoring and point-of-care diagnostics. However, the large data volume generated by high-density transducer arrays presents a major challenge for realizing compact and power-efficient wearable systems. This paper presents a photoacoustic imaging receiver (RX) that embeds compressive sensing directly into the hardware to address this bottleneck. The RX integrates 16 …</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2512.13402v2" target="_blank"
+             rel="noopener noreferrer">End2Reg: Learning Task-Specific Segmentation for Markerless Registration in Spine Surgery</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2025-12-15</span>
+            <span style="color:#5a5878;font-size:11px">Lorenzo Pettinari, Sidaty El Hadramy, Michael Wehrli…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">intraoperative imaging</span></div>
+          <p class="card-summary">Intraoperative navigation in spine surgery demands millimeter-level accuracy. Currently, this is achieved through radiation-intensive intraoperative imaging and bone-anchored markers that are invasive and disrupt surgical workflow. Markerless RGB-D registration methods offer a promising alternative. However, existing approaches rely on weak segmentation labels to isolate relevant anatomical structures, potentially propagating errors through the r…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://pubmed.ncbi.nlm.nih.gov/42716112/" target="_blank"
+             rel="noopener noreferrer">MPISuperRes-PnP: a super-resolution zero-shot plug-and-play reconstruction algorithm for magnetic particle imaging.</a>
+          <div class="card-meta">
+            <span class="source-pill">PubMed</span>
+            <span style="color:#5a5878">2026</span>
+            <span style="color:#5a5878;font-size:11px">Gapyak, März, Weinmann</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">magnetic particle imaging</span></div>
+          <p class="card-summary">Objective.Magnetic particle imaging (MPI) is a promising, emerging medical imaging modality. MPI is based on the non-linear response of magnetic nanoparticles to an applied magnetic field and does not expose the specimen to ionizing radiation. The measured signal is the voltage induced in receive coils by the particles' response. Reconstructing the particle concentration from the signal constitutes the imaging task. Even using state-of-the-art me…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://pubmed.ncbi.nlm.nih.gov/42791867/" target="_blank"
+             rel="noopener noreferrer">Next-Generation Cartilage Repair: Clinical Use of Wharton's Jelly MSCs and the Emerging Role of AI-Assisted Bioprinting.</a>
+          <div class="card-meta">
+            <span class="source-pill">PubMed</span>
+            <span style="color:#5a5878">2026</span>
+            <span style="color:#5a5878;font-size:11px">Sadlik, Matuszewska, Klon…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic imaging</span></div>
+          <p class="card-summary">The treatment of articular cartilage defects remains a significant clinical challenge due to the tissue's limited intrinsic repair capacity. This paper presents a review of clinical experiences with the use of Wharton's jelly-derived mesenchymal stem cells (WJ-MSCs) as a novel therapeutic option for cartilage regeneration. WJ-MSCs offer key advantages, including high proliferative potential, strong immunomodulatory properties, and low immunogenic…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://pubmed.ncbi.nlm.nih.gov/42675837/" target="_blank"
+             rel="noopener noreferrer">[Advances and Challenges in Photoacoustic-Ultrasound Dual-Modality Imaging: from Hardware Innovations to Clinical Applications].</a>
+          <div class="card-meta">
+            <span class="source-pill">PubMed</span>
+            <span style="color:#5a5878">2026</span>
+            <span style="color:#5a5878;font-size:11px">Sheng, Sun</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic imaging</span></div>
+          <p class="card-summary">Photoacoustic-ultrasound dual-modal imaging represents an emerging hybrid imaging technique that combines the functional advantages of photoacoustic imaging with the high-resolution structural characterization capabilities of ultrasound imaging. This article comprehensively summarizes the research status and progress from both system-level and algorithmic perspectives. In hardware development, breakthroughs in novel ultrasound transducers and mul…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #7c6cfc">
+          <a class="card-title" href="https://arxiv.org/abs/2610.01015v1" target="_blank"
+             rel="noopener noreferrer">Initial condition recovery in nonlinear damped viscous photoacoustic tomography using a convolutional neural network-guided gradient-free optimization framework</a>
+          <div class="card-meta">
+            <span class="source-pill">arXiv</span>
+            <span style="color:#5a5878">2026-10-01</span>
+            <span style="color:#5a5878;font-size:11px">Madhu Gupta, Anwesa Dey, Prapti Tala…</span>
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">photoacoustic tomography</span></div>
+          <p class="card-summary">Photoacoustic tomography (PAT) is a hybrid imaging modality that combines high optical contrast with high ultrasonic resolution for biomedical imaging applications. In this work, we investigate the inverse problem of recovering the initial pressure distribution from boundary measurements in the presence of nonlinear acoustic propagation and viscous attenuation effects. To model these phenomena more accurately, we consider a nonlinear damped visco…</p>
+        </div>
+        </section>
+        <section class="section">
+          <div class="section-header">
+            <span style="color:#f0874a;margin-right:8px">◎</span>
+            <span style="color:#f0874a">Clinical Trials</span>
+            <span class="section-count">18</span>
+            <span class="section-line"></span>
+          </div>
+          
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT00614770" target="_blank"
+             rel="noopener noreferrer">Narrow Band Imaging Colon Polyp Study</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2008-02</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">In this study the investigators hypothesize that High Definition White Light colonoscopy and narrow band imaging (NBI) will detect a higher number of adenomas compared to standard definition white light colonoscopy. NBI will have a higher accuracy in predicting polyp histology compared to high definition colonoscopy and standard colonoscopy. Specific Aim 1 - To compare the prevalence of adenomas detected by standard colonoscopy, high-definition w…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT01239082" target="_blank"
+             rel="noopener noreferrer">Colonoscopy Versus Fecal Immunochemical Test in Reducing Mortality From Colorectal Cancer (CONFIRM)</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2012-04-30</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">Colorectal cancer (CRC) is currently the second most common cause of cancer death in the United States, and one of the most preventable cancers. It has been shown in several randomized controlled trials that screening using fecal occult blood testing (FOBT) reduces CRC mortality by 13-33%. While there is strong consensus amongst experts regarding the value of CRC screening, the best approach to screening is not clear. Of the widely recommended mo…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT03186859" target="_blank"
+             rel="noopener noreferrer">Effects of Dietary Intervention and Surgery on NAFLD (Non-Alcoholic Fatty Liver Disease)</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2017-06-09</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">Approximately 90% of people undergoing bariatric surgery have NAFLD, which is a condition where fat accumulates in the liver and can lead to inflammation and scarring. It mostly causes no symptoms, however, in the most advanced cases there is an increased risk of liver cancer or liver failure. NAFLD is currently managed by weight loss and treating associated diseases such as diabetes. No medicines have been licensed to directly treat it but baria…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT07329920" target="_blank"
+             rel="noopener noreferrer">Mesenchymal CTC Ratio Dynamics Predicts Response and Survival in Pancreatic Ductal Adenocarcinoma With Neoadjuvant/Conversion Therapy</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2018-07-10</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The aim of this study was to evaluate the clinical utility of mesenchymal CTC ratio dynamics as a real-time biomarker for PDAC patients with neoadjuvant therapy.</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT04081428" target="_blank"
+             rel="noopener noreferrer">Using Breath, Cell Free DNA and Image Analysis to PRedIct Normal TissUe and Tumour Response During Prostate Cancer SBRT</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2018-10-11</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">Personalisation of radiotherapy dose based on real-time assessments of normal tissue and tumour response would maximise cure and minimise treatment related toxicity. During a 5 fraction course of prostate Stereotactic Body Radiotherapy (SBRT) this pilot study will assess whether a number of different biomarker approaches can predict for normal tissue and tumour response. Firstly the investigators will analyse volatile organic compounds released w…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06526754" target="_blank"
+             rel="noopener noreferrer">Feasibility Analysis of LCD-SLA 3D Printing Technology for Overall Surgical Planning of Liver Malignant Tumors</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2019-01-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">This study aims to evaluate the effectiveness of 3D-printed liver models in hepatobiliary surgery planning compared to traditional digital simulations. It is conducted in three phases: 1. Development and validation of 35 3D-printed liver models, focusing on timeliness, cost, precision, and alignment with digital planning tools. 2. Optimization of the 3D reconstruction process using deep learning to enhance model accuracy and efficiency. 3. A retr…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT05969691" target="_blank"
+             rel="noopener noreferrer">Radiomics-Based Visualization and Quantitative Validation of IDH1 Heterogeneity in Gliomas</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2019-03-15</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The goal of this clinical trail is to non-invasively visualise and quantitatively validate an radiomics model of genetic heterogeneity in adult patients with diffuse glioma to help clinicians better guide surgical resection and treatment options. It aims to answer are: 1. To overcome the limitations of the existing genetic diagnostic process in terms of equipment and technology requirements, high costs and long timelines, and to enable quantitati…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT05792280" target="_blank"
+             rel="noopener noreferrer">Clinical Research on a Novel Deep-learning Based System in Mediastinal Endoscopic Ultrasound Scanning</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2021-01-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The goal of this clinical trial is to develop and verify the auxiliary role of the artificial intelligence system in mediastinal ultrasound endoscopic scanning. The main questions it aims to answer are as follows: 1.The comparison of the image recognition accuracy between the artificial intelligence system and the ultrasound endoscopist; 2. Whether the artificial intelligence system can improve the integrity and efficiency of the mediastinum scan…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06478368" target="_blank"
+             rel="noopener noreferrer">Prediction of Occult Peritoneal Metastasis of Locally Advanced Gastric Cancer Using Multimodal Data Based on Artificial Intelligence Combined With Intraoperative Dynamic Video</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2024-01-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">Brief Summary: Prediction of Occult Peritoneal Metastasis of Locally Advanced Gastric Cancer Using Multimodal Data Based on Artificial Intelligence Combined with Intraoperative Dynamic Video Gastric cancer, or stomach cancer, is a major health concern worldwide. For patients diagnosed with locally advanced gastric cancer (LAGC), one of the critical challenges is the detection of occult peritoneal metastasis. These metastases are cancerous cells t…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT07682012" target="_blank"
+             rel="noopener noreferrer">LungVision AI-Augmented Fluoroscopic Navigation for Intraoperative Pulmonary Nodule Localization</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2024-01-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">This prospective single-center pilot study evaluates the clinical feasibility, localization accuracy, and safety of the LungVision system-an AI-augmented fluoroscopic navigation platform-for real-time intraoperative localization of small pulmonary nodules during video-assisted thoracoscopic surgery (VATS). All enrolled patients underwent dual localization: preoperative marking via CT-guided dye injection or virtual bronchoscopic navigation (Bronc…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06007261" target="_blank"
+             rel="noopener noreferrer">Validation of Rapid On-site Diagnostics in Early Stage Lung Cancer Sampling With a Higher Harmonic Generation Microscope</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2024-01-19</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The aim of this study is to verify a new microscopic technique in diagnosing patients suspected of lung cancer. Patients will undergo navigational bronchoscopy or surgical resection as a part of standard of care. Biopsies taken during this procedure will be imaged for a few minutes with a higher harmonic generation (HHG) microscope, after which the material is taken to the pathology department for histopathology assessment, which is currently the…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06840418" target="_blank"
+             rel="noopener noreferrer">Exploratory Study on NIRFI Technology Combined with ICG Guided Cervical Cancer Lymph Node Metastasis</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2025-01-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The goal of this exploratory study is to exploring the lymph node metastasis, tumor margin, blood vessels, ureters, and nerve imaging in cervical cancer surgery using near-infrared fluorescence imaging technology combined with indocyanine green, and establishing an artificial intelligence model for predicting lymph node metastasis of cervical cancer to guide the advancement of refined surgical procedures.And the focus of this study is to investig…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT06762613" target="_blank"
+             rel="noopener noreferrer">Functional Innovation and Application Research of Domestic Advanced Low-Dose DSA/CT-DSA</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2025-01-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The goal of this clinical trial is to learn if Generative AI Based Puncture Surgery Navigation System (GPS) can guide lung puncture in adults better. It will also learn about the quality improvement of cone beam CT (CBCT) by GPS. The main questions it aims to answer are: * Does GPS lower the number of punctures, radiation dose, and complications of participants undergo percutaneous lung puncture? * Does GPS improve the quality of CBCT images? Res…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT07020169" target="_blank"
+             rel="noopener noreferrer">Using 3D Kidney Model Based on Artificial Intelligence to Assist Partial Nephrectomy: A Prospective Validation Study</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2025-05-01</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">The goal of this study is to develop a real-time artificial intelligence-driven 3D kidney model to assist robotic or laparoscopic partial nephrectomy: • Can this AI-powered model optimize the workflow of partial nephrectomy and enhance surgical benefits?</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT07411391" target="_blank"
+             rel="noopener noreferrer">Supervised Endoscopic Tele-controlled Intelligent Lithotripsy</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2026-02-15</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">This is a phase I feasibility study to investigate the use of a novel intelligent robotic retrograde intrarenal surgery (RIRS) platform. The TaloStone T1000 RIRS system can manipulate the flexible ureteroscope, with remote control of the instruments (laser fibre or basket) and ureteral access sheath movements. Beyond teleoperation, the TaloStone T1000 RIRS system integrates AI perception models and decision-making algorithms to enable the supervi…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT07301307" target="_blank"
+             rel="noopener noreferrer">Hypotension Prediction Index (HPI) and Assisted Fluid Management (AFM) for Perioperative Hemodynamic Optimization in Patients Under General Anesthesia</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2026-03-15</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">This study investigates if the Hypotension Prediction Index (HPI) combined with the Assisted Fluid Management (AFM) software can improve perioperative hemodynamic management in adult patients undergoing general anesthesia. The main question is : Does the HPI and AFM software reduce the incidence and duration of intraoperative hypotension? Does the HPI and AFM software optimize fluid and vasopressor administration? Does the HPI and AFM software im…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT07210632" target="_blank"
+             rel="noopener noreferrer">Window Trial of Fluorescently Labeled Nivolumab-IRDye800 (Nivo800) in High Grade Glioma (HGG)</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2026-03-27</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">High-grade gliomas (HGGs) are among the most aggressive and treatment-resistant brain tumors. Immunotherapy with checkpoint inhibitors like nivolumab has shown promise, but its efficacy remains variable and poorly understood in this patient population. This clinical trial investigates a novel imaging-enabled formulation of nivolumab-IRDye800 (nivo800) which incorporates a near-infrared (NIR) fluorescent dye to enable real-time visualization of dr…</p>
+        </div>
+
+        <div class="card" style="border-left:3px solid #f0874a">
+          <a class="card-title" href="https://clinicaltrials.gov/study/NCT07835087" target="_blank"
+             rel="noopener noreferrer">Image-Guided Platform-Assisted Sentinel Lymph Node Retrieval in Early Gastric Cancer</a>
+          <div class="card-meta">
+            <span class="source-pill">ClinicalTrials.gov</span>
+            <span style="color:#5a5878">2026-08-14</span>
+            
+          </div>
+          <div style="margin:6px 0 8px;flex-wrap:wrap;display:flex"><span style="background:rgba(124,108,252,0.12);color:#9d8ffd;padding:2px 7px;border-radius:4px;font-size:10px;margin:0 3px 3px 0;display:inline-block;white-space:nowrap">surgical AI</span></div>
+          <p class="card-summary">This prospective, single-center, randomized controlled trial aims to evaluate the clinical effectiveness of an Image-Guided Platform assisted by a deep learning model for sentinel lymph node (SLN) retrieval in patients with early gastric cancer undergoing laparoscopic-endoscopic cooperative surgery combined with sentinel lymph node navigation surgery (LECS-SNNS). A total of 36 eligible participants will be randomly assigned in a 1:1 ratio to eith…</p>
+        </div>
+        </section>
+  </div>
+</main>
+
+<aside class="sidebar">
+  <div class="sidebar-block">
+    <div class="sidebar-title">Top Keywords</div>
+    <div class="kw-row"><span class="kw-label">surgical AI</span><span class="kw-num">18</span></div><div class="kw-row"><span class="kw-label">photoacoustic imaging</span><span class="kw-num">4</span></div><div class="kw-row"><span class="kw-label">photoacoustic tomography</span><span class="kw-num">3</span></div><div class="kw-row"><span class="kw-label">medical image segmentation</span><span class="kw-num">1</span></div><div class="kw-row"><span class="kw-label">intraoperative imaging</span><span class="kw-num">1</span></div><div class="kw-row"><span class="kw-label">magnetic particle imaging</span><span class="kw-num">1</span></div>
+  </div>
+  <div class="sidebar-block">
+    <div class="sidebar-title">By Source</div>
+    <div class="kw-row"><span class="kw-label">ClinicalTrials.gov</span><span class="kw-num">18</span></div><div class="kw-row"><span class="kw-label">arXiv</span><span class="kw-num">7</span></div><div class="kw-row"><span class="kw-label">PubMed</span><span class="kw-num">3</span></div>
+  </div>
+  <div class="sidebar-block">
+    <div class="sidebar-title">About</div>
+    <p class="refresh-note">
+      Refreshes daily via GitHub Actions.<br>
+      Sources: arXiv · PubMed · Semantic Scholar ·
+      OpenAlex · ClinicalTrials.gov · 9 RSS feeds ·
+      3 direct scrapes.<br><br>
+      Edit <code>KEYWORDS</code> in
+      <code>scripts/scraper.py</code> to tune relevance.
+    </p>
+  </div>
+</aside>
+</div>
+
+<script>
+let activeFilter = 'all';
+
+function setFilter(cat, btn) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function filterCards(query) {
+  applyFilters(query);
+}
+
+function applyFilters(query) {
+  const q = (query !== undefined ? query : document.getElementById('search').value)
+    .toLowerCase().trim();
+  document.querySelectorAll('.card').forEach(card => {
+    const text  = card.innerText.toLowerCase();
+    const cat   = card.dataset.cat || 'news';
+    const catOk = activeFilter === 'all' || cat === activeFilter;
+    const qOk   = !q || text.includes(q);
+    card.style.display = (catOk && qOk) ? '' : 'none';
+  });
+  // hide empty sections
+  document.querySelectorAll('.section').forEach(sec => {
+    const visible = [...sec.querySelectorAll('.card')]
+      .some(c => c.style.display !== 'none');
+    sec.style.display = visible ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
